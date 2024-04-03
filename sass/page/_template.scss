@@ -600,6 +600,9 @@ body {
   }
   &.search_block {
     padding: 30px;
+    @include screen('tablet') {
+      padding: 30px 15px;
+    }
   }
   &.gray {
     background: #eef2eb;
@@ -2521,4 +2524,13 @@ table {
       text-align: right;
     }
   }
+}
+.aCenter {
+  text-align: center;
+}
+.aLeft {
+  text-align: left;
+}
+.aRight {
+  text-align: right;
 }

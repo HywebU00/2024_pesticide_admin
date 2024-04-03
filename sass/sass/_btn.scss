@@ -137,3 +137,28 @@ $btn-radius: 2em;
 .btn-xs {
   font-size: $font-size * 0.75; //12px
 }
+//自訂
+.do_edit {
+  background: rgb(58, 150, 91);
+  background: linear-gradient(180deg, rgba(58, 150, 91, 1) 0%, rgba(53, 136, 83, 1) 35%, rgba(49, 120, 75, 1) 100%);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  &:hover,
+  &:focus {
+    background: rgb(58, 150, 91);
+    background: linear-gradient(0deg, rgba(58, 150, 91, 1) 0%, rgba(53, 136, 83, 1) 35%, rgba(49, 120, 75, 1) 100%);
+  }
+}
+.do_delete {
+  background: rgb(242, 127, 69);
+  background: linear-gradient(180deg, rgba(242, 127, 69, 1) 0%, rgba(240, 110, 45, 1) 35%, rgba(224, 85, 16, 1) 100%);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  &:hover,
+  &:focus {
+    background: rgb(242, 127, 69);
+    background: linear-gradient(0deg, rgba(242, 127, 69, 1) 0%, rgba(240, 110, 45, 1) 35%, rgba(224, 85, 16, 1) 100%);
+  }
+}

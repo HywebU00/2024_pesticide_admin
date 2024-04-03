@@ -351,7 +351,16 @@ table {
   }
 }
 .table_wrapper {
-  margin-bottom: 0;
+  margin-bottom: 1em;
+  a {
+    color: #f18701;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      color: darken(#f18701, 15);
+      text-decoration: none;
+    }
+  }
   &.th_left {
     th {
       width: 20%;
@@ -389,8 +398,10 @@ table {
   }
   // 橫式標題固定、HTML須配合異動
   &.sticky_th {
-    // max-height: 500px;
-    overflow: auto;
+    width: 100%;
+    display: block;
+    max-height: 500px;
+    overflow-x: auto !important;
     font-size: 0.938em;
 
     table {
@@ -416,7 +427,9 @@ table {
     display: block;
     @include clearfix;
     // overflow-y: hidden;
-    // overflow-x: auto;
+    overflow-x: auto;
+    // border: solid 2px #c00;
+    // scroll-behavior: auto !important;
     padding-bottom: 1em;
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translate3d(0, 0, 0);

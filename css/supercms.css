@@ -810,6 +810,30 @@ input[type=button], .btn-secondary, .btn-primary, .btn-purple, .btn-red, .btn-or
   font-size: 0.75em;
 }
 
+.do_edit {
+  background: rgb(58, 150, 91);
+  background: linear-gradient(180deg, rgb(58, 150, 91) 0%, rgb(53, 136, 83) 35%, rgb(49, 120, 75) 100%);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em 1em;
+}
+.do_edit:hover, .do_edit:focus {
+  background: rgb(58, 150, 91);
+  background: linear-gradient(0deg, rgb(58, 150, 91) 0%, rgb(53, 136, 83) 35%, rgb(49, 120, 75) 100%);
+}
+
+.do_delete {
+  background: rgb(242, 127, 69);
+  background: linear-gradient(180deg, rgb(242, 127, 69) 0%, rgb(240, 110, 45) 35%, rgb(224, 85, 16) 100%);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em 1em;
+}
+.do_delete:hover, .do_delete:focus {
+  background: rgb(242, 127, 69);
+  background: linear-gradient(0deg, rgb(242, 127, 69) 0%, rgb(240, 110, 45) 35%, rgb(224, 85, 16) 100%);
+}
+
 hr {
   border: none;
   border-top: 1px solid #CFCFCF;
@@ -1621,7 +1645,15 @@ table .count a:hover, table .count a:focus {
 }
 
 .table_wrapper {
-  margin-bottom: 0;
+  margin-bottom: 1em;
+}
+.table_wrapper a {
+  color: #f18701;
+  text-decoration: underline;
+}
+.table_wrapper a:hover, .table_wrapper a:focus {
+  color: #a55c01;
+  text-decoration: none;
 }
 .table_wrapper.th_left th {
   width: 20%;
@@ -1656,7 +1688,10 @@ table .count a:hover, table .count a:focus {
   width: auto;
 }
 .table_wrapper.sticky_th {
-  overflow: auto;
+  width: 100%;
+  display: block;
+  max-height: 500px;
+  overflow-x: auto !important;
   font-size: 0.938em;
 }
 .table_wrapper.sticky_th table {
@@ -1682,6 +1717,7 @@ table .count a:hover, table .count a:focus {
     display: block;
     clear: both;
     zoom: 1;
+    overflow-x: auto;
     padding-bottom: 1em;
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translate3d(0, 0, 0);
@@ -6794,6 +6830,13 @@ body.dark {
 .publish_block.search_block {
   padding: 30px;
 }
+@media screen and (max-width: 991px) {
+  .content_block.search_block,
+  .widget_block.search_block,
+  .publish_block.search_block {
+    padding: 30px 15px;
+  }
+}
 .content_block.gray,
 .widget_block.gray,
 .publish_block.gray {
@@ -8882,6 +8925,18 @@ table td .dropdown .dropdown-content .btn.btn-red:hover, table td .dropdown .dro
     top: -0.5em;
     text-align: right;
   }
+}
+
+.aCenter {
+  text-align: center;
+}
+
+.aLeft {
+  text-align: left;
+}
+
+.aRight {
+  text-align: right;
 }
 
 .mp_widget .help {
