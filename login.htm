@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- <link rel="stylesheet" href="css/animate.min.css"> -->
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="login_wrapper">
+      <!-- 有需要再放圖 -->
+      <div class="bg_img">
+        <img src="images/login_bg.jpg" alt="" />
+      </div>
+      <div class="pic">
+        <img src="images/logo.svg" alt="農業部動植物防疫檢疫署" />
+      </div>
+      <div class="login">
+        <h1>
+          <span>農藥銷售管理網管理平台</span>
+        </h1>
+        <div class="flex-form">
+          <div class="form_grp">
+            <div class="labelEffect">
+              <input name="" type="text" value="" />
+              <label>請輸入帳號<abbr>*</abbr></label>
+            </div>
+          </div>
+          <div class="form_grp">
+            <div class="labelEffect password_toggle">
+              <input name="" type="password" value="" />
+              <button class="btn btn-icon"><i class="i_hide"></i></button>
+              <label>請輸入密碼<abbr>*</abbr></label>
+            </div>
+          </div>
+          <div class="form_grp">
+            <div class="labelEffect">
+              <input name="" type="text" value="" id="openModal" />
+              <label>請輸入驗證碼<abbr>*</abbr></label>
+              <div class="additional">
+                <img src="images/captcha.gif" alt="" />
+                <button type="button" class="btn btn_circle"><i class="i_reload"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn_grp">
+            <button class="btn btn-primary">登入</button>
+            <button class="btn">忘記密碼</button>
+          </div>
+          <div class="contact">
+            <p>如有登入問題，請聯繫資訊科 王大明 分機123 <br />電子郵件：<a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--燈箱視窗-->
+    <div id="modal1" class="modal">
+      <h2>請輸入驗證碼完成登入</h2>
+      <p>為了您的帳戶安全，我們啟用兩步驟驗證您的身份，請查看您的農藥銷售管理系統註冊信箱，並將信中驗證碼輸入至下方欄位。</p>
+      <div class="form_grp">
+        <div class="labelEffect">
+          <input name="" type="text" value="" id="openModal" />
+          <label>請輸入驗證碼<abbr>*</abbr></label>
+        </div>
+      </div>
+      <div class="info">沒收到驗證碼? <a href="#">重寄驗證碼</a></div>
+      <div class="btn_grp">
+        <button class="btn btn-primary">提交</button>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+    <!-- highlight -->
+    <script src="vendor/highlight/highlight.pack.js"></script>
+    <!-- tree view -->
+    <script src="vendor/treeview/jquery.treeview.js"></script>
+  </body>
+</html>

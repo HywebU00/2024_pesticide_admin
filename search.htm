@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="light.htm">首頁</a></li>
+            <li><a href="#">未陳報名單</a></li>
+            <li>零售未回傳名單</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>稽催作業</h2>
+            </div>
+
+            <!-- 主要內容區  -->
+            <div class="content_block search_block">
+              <!-- 標題 -->
+              <div class="_head">
+                <h3><span>零售未回傳名單</span></h3>
+              </div>
+              <div class="_content">
+                <div class="table_wrapper th_left">
+                  <table class="table_hover">
+                    <tbody>
+                      <tr>
+                        <th><abbr>*</abbr>交易日期區間</th>
+                        <td>
+                          <div class="flex-form">
+                            <div class="form_grp datepick">
+                              <div class="startDate">
+                                <input type="date" name="party" min="" max="" />
+                              </div>
+                              <div class="endDate">
+                                <input type="date" name="party" min="" max="" />
+                              </div>
+                              <div class="help">每次查詢之起日~迄日的設定區間為12月，提供查詢近三年的資料。</div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><abbr>*</abbr>以下欄位至少擇一輸入</td>
+                      </tr>
+                      <tr>
+                        <th>陳報業者的販賣業執照號碼</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="請輸入陳報業者的販賣業執照號碼" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>農藥普通名稱</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="請輸入農藥普通名稱" />
+                          <div class="notice_warning">至少擇一條件輸入</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>農藥條碼</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="請輸入農藥條碼" />
+                          <div class="notice_warning">至少擇一條件輸入</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>交易對象身分證字號</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="請輸入交易對象身分證字號" />
+                          <div class="notice_warning">至少擇一條件輸入</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>交易對象姓名</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="請輸入交易對象姓名" />
+                          <div class="notice_warning">至少擇一條件輸入</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>農民卡號</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="請輸入農民卡號" />
+                          <div class="notice_warning">至少擇一條件輸入</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>地區(請小心使用)</th>
+                        <td>
+                          <div class="form_grp">
+                            <select id="" name="">
+                              <option>全部縣市</option>
+                              <option>臺北市</option>
+                              <option>新北市</option>
+                              <option>....</option>
+                            </select>
+                            <select id="" name="">
+                              <option>全部鄉鎮</option>
+                              <option>....</option>
+                            </select>
+                          </div>
+                          <div class="notice_warning">至少擇一條件輸入</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><abbr>## </abbr>以下欄位可選填<abbr> ##</abbr></td>
+                      </tr>
+                      <tr>
+                        <th>資料來源</th>
+                        <td>
+                          <select id="ds" name="ds">
+                            <option value="" selected="">=== 請選擇 ===</option>
+                            <option value="4">單機POS</option>
+                            <option value="3">POS</option>
+                            <option value="2">WebService</option>
+                            <option value="1">Excel</option>
+                            <option value="5">網站退貨</option>
+                            <option value="6">WebPOS</option>
+                            <option value="7">線上陳報</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>作物</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="請輸入作物" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>病蟲害</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="請輸入病蟲害" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>報表欲呈現的欄位</th>
+                        <td>
+                          <input name="show_formcode" type="checkbox" value="1" />劑型 <input name="show_contents" type="checkbox" value="1" />含量(%) <input name="show_e_vol" type="checkbox" value="1" />容量單位 <input name="show_spec" type="checkbox" value="1" />包裝
+                          <input name="show_cropname" type="checkbox" value="1" />作物 <input name="show_pestname" type="checkbox" value="1" />病蟲害 <input name="show_ds" type="checkbox" value="1" />資料來源 <input name="show_note" type="checkbox" value="1" />備註
+                          <input name="show_ct" type="checkbox" value="1" />資料轉置時間 <input name="show_ai" type="checkbox" value="1" />AI含量
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>排除測試帳號</th>
+                        <td>
+                          <select name="storeType">
+                            <option value="A">正式</option>
+                            <option value="">全部</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- 按鈕 -->
+                  <div class="btn_grp">
+                    <input type="submit" class="btn btn-primary" value="查詢" />
+                    <!--  -->
+                    <input type="reset" class="btn btn-normal" value="重設" />
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <!-- 統計截止日期 -->
+              <div class="_head">
+                <ul class="ullist">
+                  <li>統計截止日期：2024/01/15</li>
+                  <li>報表產出日期：2024/01/15</li>
+                </ul>
+                <div class="btn_right">
+                  <button class="btn btn-primary">匯出報表</button>
+                </div>
+              </div>
+              <!-- 查詢結果 -->
+              <div class="_content">
+                <div class="_head">
+                  <!-- 頁碼 -->
+                  <div class="pagination">
+                    <form action="" class="form_inline">
+                      <div class="total">
+                        共<span>308</span>筆資料，第<span>1/18</span>頁，每頁顯示
+                        <select name="" id="">
+                          <option value="">10</option>
+                          <option value="">30</option>
+                          <option value="" selected>50</option>
+                          <option value="">100</option>
+                        </select>
+                        筆
+                      </div>
+                    </form>
+                    <ul class="page">
+                      <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+                      <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li><a href="#">6</a></li>
+                      <li><a href="#">7</a></li>
+                      <li><a href="#">8</a></li>
+                      <li><a href="#">9</a></li>
+                      <li><a href="#">10</a></li>
+                      <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+                      <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="_content">
+                  <!-- 表格樣式 -->
+                  <div class="table_wrapper sticky_th">
+                    <table summary="資料表格" class="table_hover">
+                      <thead>
+                        <tr>
+                          <th class="aCenter">編號</th>
+                          <th class="aCenter">陳報業者</th>
+                          <th class="aCenter">縣市</th>
+                          <th class="aCenter">鄉鎮</th>
+                          <th class="aCenter">交易日期</th>
+                          <th class="aCenter">農藥條碼</th>
+                          <th class="aCenter">農藥普通名稱</th>
+                          <th class="aCenter">劑型</th>
+                          <!--fx show-->
+                          <th class="aCenter">含量(%)</th>
+                          <!--fx show-->
+                          <!--fx show-->
+                          <!--fx show-->
+                          <th class="aCenter">容量單位</th>
+                          <!--fx show-->
+                          <th class="aCenter">包裝</th>
+                          <!--fx show-->
+                          <th class="aCenter">銷售數量</th>
+                          <th class="aCenter">作物</th>
+                          <!--fx show-->
+                          <th class="aCenter">病蟲害</th>
+                          <!--fx show-->
+                          <th class="aCenter">交易對象</th>
+                          <th class="aCenter">備註</th>
+                          <!--fx show-->
+                          <th class="aCenter">資料來源</th>
+                          <!--fx show-->
+                          <th class="aCenter">資料轉置時間</th>
+                          <!--fx show-->
+                        </tr>
+                        <!--  xxx: Excel -->
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242052271</td>
+                          <td>亞托敏(F226)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>250 g/L (25% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250cc</td>
+                          <!--fx show-->
+                          <td>HD塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>梨</td>
+                          <!--fx show-->
+                          <td>輪紋病</td>
+                          <!--fx show-->
+                          <td>林國文(G120998188)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>2</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242053025</td>
+                          <td>賽速安(I235)</td>
+                          <td>SG</td>
+                          <!--fx show-->
+                          <td>25.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>50g</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>2</td>
+                          <td>梨</td>
+                          <!--fx show-->
+                          <td>柑桔捲葉蚜</td>
+                          <!--fx show-->
+                          <td>林國文(G120998188)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>3</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242053155</td>
+                          <td>賽洛寧(I175)</td>
+                          <td>CS</td>
+                          <!--fx show-->
+                          <td>2.460 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>鼠李科梨果類</td>
+                          <!--fx show-->
+                          <td>夜蛾類</td>
+                          <!--fx show-->
+                          <td>林國文(G120998188)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>4</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242165186</td>
+                          <td>百利普芬(I224)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>11.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500ml</td>
+                          <!--fx show-->
+                          <td>寶特瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>鼠李科梨果類</td>
+                          <!--fx show-->
+                          <td>介殼蟲類</td>
+                          <!--fx show-->
+                          <td>林國文(G120998188)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>5</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242179695</td>
+                          <td>待克利(F196)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>250 g/L (25% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>梨</td>
+                          <!--fx show-->
+                          <td>黑星病</td>
+                          <!--fx show-->
+                          <td>林國文(G120998188)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>6</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242185979</td>
+                          <td>賜派芬(A053)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>30.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500ml</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>鼠李科梨果類</td>
+                          <!--fx show-->
+                          <td>柑桔葉蟎</td>
+                          <!--fx show-->
+                          <td>林國文(G120998188)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>7</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242052271</td>
+                          <td>亞托敏(F226)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>250 g/L (25% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250cc</td>
+                          <!--fx show-->
+                          <td>HD塑膠瓶</td>
+                          <!--fx show-->
+                          <td>5</td>
+                          <td>瓜果類</td>
+                          <!--fx show-->
+                          <td>蔓枯病</td>
+                          <!--fx show-->
+                          <td>林阿枝(G101496472)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>8</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242052448</td>
+                          <td>賽普洛(F221)</td>
+                          <td>WG</td>
+                          <!--fx show-->
+                          <td>50.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250g</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>6</td>
+                          <td>瓜果類</td>
+                          <!--fx show-->
+                          <td>白粉病</td>
+                          <!--fx show-->
+                          <td>林阿枝(G101496472)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>9</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242053025</td>
+                          <td>賽速安(I235)</td>
+                          <td>SG</td>
+                          <!--fx show-->
+                          <td>25.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>50g</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>10</td>
+                          <td>瓜果類</td>
+                          <!--fx show-->
+                          <td>粉蝨類</td>
+                          <!--fx show-->
+                          <td>林阿枝(G101496472)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>10</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242053377</td>
+                          <td>派滅淨(I215)</td>
+                          <td>WG</td>
+                          <!--fx show-->
+                          <td>50.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>100g</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>10</td>
+                          <td>瓜果類</td>
+                          <!--fx show-->
+                          <td>蚜蟲類</td>
+                          <!--fx show-->
+                          <td>林阿枝(G101496472)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>11</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242101474</td>
+                          <td>曼普胺(F292)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>250 g/L (25% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250ml</td>
+                          <!--fx show-->
+                          <td>塑膠罐</td>
+                          <!--fx show-->
+                          <td>10</td>
+                          <td>西瓜</td>
+                          <!--fx show-->
+                          <td>露菌病</td>
+                          <!--fx show-->
+                          <td>林阿枝(G101496472)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>12</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242179381</td>
+                          <td>銅右滅達樂(F246)</td>
+                          <td>WP</td>
+                          <!--fx show-->
+                          <td>71.600 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250g</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>10</td>
+                          <td>十字花科包葉菜類</td>
+                          <!--fx show-->
+                          <td>露菌病</td>
+                          <!--fx show-->
+                          <td>林阿枝(G101496472)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>13</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242179695</td>
+                          <td>待克利(F196)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>250 g/L (25% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>3</td>
+                          <td>瓜果類</td>
+                          <!--fx show-->
+                          <td>蔓枯病</td>
+                          <!--fx show-->
+                          <td>林阿枝(G101496472)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>14</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242181384</td>
+                          <td>亞派占(F317)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>125 g/L (12.5% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250mL</td>
+                          <!--fx show-->
+                          <td>Co-ex塑膠瓶</td>
+                          <!--fx show-->
+                          <td>6</td>
+                          <td>瓜果類</td>
+                          <!--fx show-->
+                          <td>白粉病</td>
+                          <!--fx show-->
+                          <td>林阿枝(G101496472)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>15</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242052400</td>
+                          <td>菲克利(F188)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>23.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>銹病</td>
+                          <!--fx show-->
+                          <td>張金標(G100881664)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>16</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242053155</td>
+                          <td>賽洛寧(I175)</td>
+                          <td>CS</td>
+                          <!--fx show-->
+                          <td>2.460 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>葉部薊馬類</td>
+                          <!--fx show-->
+                          <td>張金標(G100881664)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>17</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242102648</td>
+                          <td>亞托敏(F226)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>250 g/L (25% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>100c.c.</td>
+                          <!--fx show-->
+                          <td>HD塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科根菜類</td>
+                          <!--fx show-->
+                          <td>疫病</td>
+                          <!--fx show-->
+                          <td>張金標(G100881664)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>18</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242166022</td>
+                          <td>克凡派(I217)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>10.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500ml</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>夜蛾類</td>
+                          <!--fx show-->
+                          <td>張金標(G100881664)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>19</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242169634</td>
+                          <td>賽速安勃(I254)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>300 g/L (30% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>80ml</td>
+                          <!--fx show-->
+                          <td>塑膠罐</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥</td>
+                          <!--fx show-->
+                          <td>夜蛾類</td>
+                          <!--fx show-->
+                          <td>張金標(G100881664)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>20</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242053575</td>
+                          <td>左旋莫多草(H164)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>960 g/L (96% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250cc</td>
+                          <!--fx show-->
+                          <td>co-ex 塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>落花生</td>
+                          <!--fx show-->
+                          <td>雜草</td>
+                          <!--fx show-->
+                          <td>李金玉(G201095146)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>21</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242201815</td>
+                          <td>固殺草(H143)</td>
+                          <td>SL</td>
+                          <!--fx show-->
+                          <td>13.500 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>5000公撮</td>
+                          <!--fx show-->
+                          <td>HDPE 瓶</td>
+                          <!--fx show-->
+                          <td>8</td>
+                          <td>非耕作農地</td>
+                          <!--fx show-->
+                          <td>雜草</td>
+                          <!--fx show-->
+                          <td>李金玉(G201095146)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>22</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242052400</td>
+                          <td>菲克利(F188)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>23.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>桃</td>
+                          <!--fx show-->
+                          <td>縮葉病</td>
+                          <!--fx show-->
+                          <td>呂明一(U120835954)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>23</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242052813</td>
+                          <td>賽普護汰寧(F229)</td>
+                          <td>WG</td>
+                          <!--fx show-->
+                          <td>62.500 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>100g</td>
+                          <!--fx show-->
+                          <td>鋁箔袋</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>柿</td>
+                          <!--fx show-->
+                          <td>灰黴病</td>
+                          <!--fx show-->
+                          <td>呂明一(U120835954)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>24</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242176786</td>
+                          <td>達特南(I239)</td>
+                          <td>SG</td>
+                          <!--fx show-->
+                          <td>20.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>100g</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>2</td>
+                          <td>柿</td>
+                          <!--fx show-->
+                          <td>薊馬類</td>
+                          <!--fx show-->
+                          <td>呂明一(U120835954)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>25</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242101559</td>
+                          <td>賜諾特(I255)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>11.700 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>100ml</td>
+                          <!--fx show-->
+                          <td>HPE瓶</td>
+                          <!--fx show-->
+                          <td>2</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>薊馬類</td>
+                          <!--fx show-->
+                          <td>游阿明(G120108951)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>26</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242166022</td>
+                          <td>克凡派(I217)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>10.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500ml</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>2</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>夜蛾類</td>
+                          <!--fx show-->
+                          <td>游阿明(G120108951)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>27</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242169641</td>
+                          <td>賽速安勃(I254)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>300 g/L (30% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>200ml</td>
+                          <!--fx show-->
+                          <td>塑膠罐</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥</td>
+                          <!--fx show-->
+                          <td>夜蛾類</td>
+                          <!--fx show-->
+                          <td>游阿明(G120108951)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>28</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242226481</td>
+                          <td>因滅汀(I226)</td>
+                          <td>SG</td>
+                          <!--fx show-->
+                          <td>5.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>50g</td>
+                          <!--fx show-->
+                          <td>鋁箔包</td>
+                          <!--fx show-->
+                          <td>2</td>
+                          <td>蔥</td>
+                          <!--fx show-->
+                          <td>夜蛾類</td>
+                          <!--fx show-->
+                          <td>游阿明(G120108951)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>29</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242130184</td>
+                          <td>阿巴汀(I195)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>2.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>0.5L</td>
+                          <!--fx show-->
+                          <td>co-ex 塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>茶</td>
+                          <!--fx show-->
+                          <td>銹蜱類</td>
+                          <!--fx show-->
+                          <td>黃琳昌(G101191810)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>30</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242164394</td>
+                          <td>賽速洛寧(I250)</td>
+                          <td>ZC</td>
+                          <!--fx show-->
+                          <td>24.7%(w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500ml</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>茶</td>
+                          <!--fx show-->
+                          <td>小綠葉蟬</td>
+                          <!--fx show-->
+                          <td>黃琳昌(G101191810)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />18:16:31</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>31</td>
+                          <td>農旺農業資材行(A00113)</td>
+                          <td>宜蘭縣</td>
+                          <td>冬山鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242138975</td>
+                          <td>阿巴汀(I195)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>2.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>PET瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>柑桔類</td>
+                          <!--fx show-->
+                          <td>銹蜱類</td>
+                          <!--fx show-->
+                          <td>林朧呈(G100736299)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />12:40:15</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>32</td>
+                          <td>振農行(A00081)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242105564</td>
+                          <td>克凡派(I217)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>10.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>夜蛾類</td>
+                          <!--fx show-->
+                          <td>李建鴻(G121025273)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />17:06:52</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>33</td>
+                          <td>振農行(A00081)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/31</td>
+                          <td>4711242201723</td>
+                          <td>百克敏(F260)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>23.600 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>銹病</td>
+                          <!--fx show-->
+                          <td>李建鴻(G121025273)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/31<br />17:06:52</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>34</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242119028</td>
+                          <td>亞滅培(I225)</td>
+                          <td>SP</td>
+                          <!--fx show-->
+                          <td>20.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250g</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>4</td>
+                          <td>薔薇科梨果類</td>
+                          <!--fx show-->
+                          <td>薊馬類</td>
+                          <!--fx show-->
+                          <td>蔡正佳(Q122159908)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>35</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242085620</td>
+                          <td>賽福座(F173)</td>
+                          <td>WP</td>
+                          <!--fx show-->
+                          <td>30.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500g</td>
+                          <!--fx show-->
+                          <td>紙袋</td>
+                          <!--fx show-->
+                          <td>10</td>
+                          <td>梨</td>
+                          <!--fx show-->
+                          <td>黑星病</td>
+                          <!--fx show-->
+                          <td>張志明(G120492010)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>36</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242136506</td>
+                          <td>亞滅培(I225)</td>
+                          <td>SP</td>
+                          <!--fx show-->
+                          <td>20.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250公克</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>7</td>
+                          <td>梨果類</td>
+                          <!--fx show-->
+                          <td>蚜蟲類</td>
+                          <!--fx show-->
+                          <td>張志明(G120492010)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>37</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242136506</td>
+                          <td>亞滅培(I225)</td>
+                          <td>SP</td>
+                          <!--fx show-->
+                          <td>20.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250公克</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>10</td>
+                          <td>鼠李科梨果類</td>
+                          <!--fx show-->
+                          <td>薊馬類</td>
+                          <!--fx show-->
+                          <td>林春東(G101278009)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>38</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242206100</td>
+                          <td>待克利(F196)</td>
+                          <td>WG</td>
+                          <!--fx show-->
+                          <td>10.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>1kg</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>2</td>
+                          <td>梨</td>
+                          <!--fx show-->
+                          <td>黑星病</td>
+                          <!--fx show-->
+                          <td>陳金福(R120311107)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>39</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242085576</td>
+                          <td>多保鏈黴素(F041)</td>
+                          <td>WP</td>
+                          <!--fx show-->
+                          <td>68.800 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500g</td>
+                          <!--fx show-->
+                          <td>紙袋</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>桃</td>
+                          <!--fx show-->
+                          <td>穿孔病</td>
+                          <!--fx show-->
+                          <td>陳金福(R120311107)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>40</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242101122</td>
+                          <td>亞滅寧(I071)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>10.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>PET瓶</td>
+                          <!--fx show-->
+                          <td>4</td>
+                          <td>薔薇科梨果類</td>
+                          <!--fx show-->
+                          <td>薊馬類</td>
+                          <!--fx show-->
+                          <td>林春豐(G120255839)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>41</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242206100</td>
+                          <td>待克利(F196)</td>
+                          <td>WG</td>
+                          <!--fx show-->
+                          <td>10.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>1kg</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>4</td>
+                          <td>梨</td>
+                          <!--fx show-->
+                          <td>炭疽病</td>
+                          <!--fx show-->
+                          <td>林春豐(G120255839)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>42</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242136506</td>
+                          <td>亞滅培(I225)</td>
+                          <td>SP</td>
+                          <!--fx show-->
+                          <td>20.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250公克</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>3</td>
+                          <td>梨果類</td>
+                          <!--fx show-->
+                          <td>蚜蟲類</td>
+                          <!--fx show-->
+                          <td>黃明順(L103369828)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>43</td>
+                          <td>世明農業資材行(A00057)</td>
+                          <td>宜蘭縣</td>
+                          <td>宜蘭市</td>
+                          <td>2024/03/30</td>
+                          <td>4711242220243</td>
+                          <td>達特南(I239)</td>
+                          <td>SG</td>
+                          <!--fx show-->
+                          <td>20.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>200公克</td>
+                          <!--fx show-->
+                          <td>鋁袋</td>
+                          <!--fx show-->
+                          <td>4</td>
+                          <td>梨</td>
+                          <!--fx show-->
+                          <td>梨木蝨</td>
+                          <!--fx show-->
+                          <td>黃明順(L103369828)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:35:34</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>44</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/30</td>
+                          <td>4711242052288</td>
+                          <td>亞托敏(F226)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>250 g/L (25% w/v)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>HD塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>梨</td>
+                          <!--fx show-->
+                          <td>輪紋病</td>
+                          <!--fx show-->
+                          <td>楊木生(F121294179)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:27:44</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>45</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/30</td>
+                          <td>4711242165186</td>
+                          <td>百利普芬(I224)</td>
+                          <td>EC</td>
+                          <!--fx show-->
+                          <td>11.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500ml</td>
+                          <!--fx show-->
+                          <td>寶特瓶</td>
+                          <!--fx show-->
+                          <td>3</td>
+                          <td>鼠李科梨果類</td>
+                          <!--fx show-->
+                          <td>介殼蟲類</td>
+                          <!--fx show-->
+                          <td>楊木生(F121294179)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:27:44</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>46</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/30</td>
+                          <td>4711242185979</td>
+                          <td>賜派芬(A053)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>30.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500ml</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>2</td>
+                          <td>鼠李科梨果類</td>
+                          <!--fx show-->
+                          <td>柑桔葉蟎</td>
+                          <!--fx show-->
+                          <td>楊木生(F121294179)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:27:44</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>47</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/30</td>
+                          <td>4711242052400</td>
+                          <td>菲克利(F188)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>23.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>銹病</td>
+                          <!--fx show-->
+                          <td>李榮金(G101816367)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:27:44</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>48</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/30</td>
+                          <td>4711242052400</td>
+                          <td>菲克利(F188)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>23.000 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>250cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>銹病</td>
+                          <!--fx show-->
+                          <td>張木枝(G100911489)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:27:44</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>49</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/30</td>
+                          <td>4711242053155</td>
+                          <td>賽洛寧(I175)</td>
+                          <td>CS</td>
+                          <!--fx show-->
+                          <td>2.460 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥科小葉菜類</td>
+                          <!--fx show-->
+                          <td>葉部薊馬類</td>
+                          <!--fx show-->
+                          <td>張木枝(G100911489)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:27:44</td>
+                          <!--fx show-->
+                        </tr>
+
+                        <tr>
+                          <td>50</td>
+                          <td>弘大農藥行(A00024)</td>
+                          <td>宜蘭縣</td>
+                          <td>三星鄉</td>
+                          <td>2024/03/30</td>
+                          <td>4711242064861</td>
+                          <td>依普同(F072)</td>
+                          <td>SC</td>
+                          <!--fx show-->
+                          <td>23.700 (%)</td>
+                          <!--fx show-->
+
+                          <!--fx show-->
+                          <td>500cc</td>
+                          <!--fx show-->
+                          <td>塑膠瓶</td>
+                          <!--fx show-->
+                          <td>1</td>
+                          <td>蔥</td>
+                          <!--fx show-->
+                          <td>紫斑病</td>
+                          <!--fx show-->
+                          <td>張木枝(G100911489)</td>
+                          <td></td>
+                          <!--fx show-->
+                          <!-- ds:4單機POS -->
+                          <td>單機POS</td>
+                          <!--fx show-->
+                          <td>2024/03/30<br />19:27:44</td>
+                          <!--fx show-->
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- 頁碼 -->
+                  <div class="pagination">
+                    <ul class="page">
+                      <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+                      <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li><a href="#">6</a></li>
+                      <li><a href="#">7</a></li>
+                      <li><a href="#">8</a></li>
+                      <li><a href="#">9</a></li>
+                      <li><a href="#">10</a></li>
+                      <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+                      <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 主要內容區 end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+.breadcrumb {
+  padding: 1em 0em 0.1em;
+  font-size: 0.938em;
+  margin: 0px auto 5px;
+
+  @include screen('tablet') {
+    padding: 0.1em 0em 0.1em;
+  }
+  ul {
+    @include li-reset;
+    li {
+      display: inline-block;
+      margin: 0px 0.1em 0.1em 0px;
+      color: #333;
+      &:before {
+        @extend %slash;
+      }
+      &:first-child:before {
+        content: '';
+        display: inline-block;
+        color: #666;
+        margin-left: 0;
+        padding: 0;
+      }
+    }
+  }
+  a {
+    color: #333;
+    &:hover,
+    &:focus {
+      color: $aHover;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<header>
+  <div class="container">
+    <!-- toggle_menu_btn 收合按鈕 -->
+    <a href="#" class="toggle_menu_btn"></a>
+    <h1>農藥銷售管理網管理平台</h1>
+    <!-- 版頭右側功能 -->
+    <div class="control_panel">
+      <!--  個人化panel -->
+      <div class="item account dropdown">
+        <a href="#" class="dropdown-btn"><img src="images/icon2/icon_people.svg" alt="" />王大明 您好</a>
+        <div class="dropdown-content">
+          <div class="info">
+            <!-- <div class="pic">
+              <img src="https://assets.imgix.net/unsplash/bear.jpg?w=800&h=480" alt="" />
+            </div> -->
+            <div class="id">帳號：admin(administrator)</div>
+            <div class="login_date">2024-03-01 14:00:05<br />從10.10.1.1 登入系統</div>
+          </div>
+          <ul>
+            <li><a href="#">個人資料維護</a></li>
+            <li><a href="#">操作手冊</a></li>
+          </ul>
+          <div class="btn-grp">
+            <button class="btn">變更密碼</button>
+            <button class="btn btn-red">登出</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- customize -->
+<script src="js/customize.js"></script>
+<script>
+  //----------------------------------------------------------版頭-----//
+  var dropdownStatus = false;
+  $('.dropdown-btn').each(function (index, el) {
+    $(this).click(function (e) {
+      $(this).siblings('.dropdown-content').toggleClass('show');
+      dropdownStatus = true;
+      $(this).blur();
+      e.preventDefault();
+    });
+  });
+  $(document).mouseup(function (e) {
+    var target = e.target,
+      container = $('.dropdown-content');
+    if (!container.is(e.target) && container.has(e.target).length === 0 && (!$('.dropdown-btn').is(e.target) || !$('.btn-dropdown').is(e.target))) {
+      if (!(($('.dropdown-btn').is(e.target) || $('.btn-dropdown').is(e.target)) && $(target).siblings('.show').length > 0)) {
+        container.removeClass('show');
+      }
+    }
+  });
+</script>
