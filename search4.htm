@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="mp.htm">首頁</a></li>
+            <li><a href="#">系統功能模組</a></li>
+            <li>線上報名管理</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>線上報名管理</h2>
+            </div>
+
+            <!-- 主要內容區  -->
+            <div class="content_block search_block">
+              <!-- 統計截止日期 -->
+              <div class="_head">
+                <div class="listfunction">
+                  <label for="sort">快速篩選</label>
+                  <select name="xxxx" id="m_main">
+                    <option value="0" selected="">===請選擇===</option>
+                    <option value="OLCLASS">類別</option>
+                    <option value="STATUS">狀態</option>
+                    <option value="OLPHASE">進度</option>
+                  </select>
+                  <select name="" id="m_child">
+                    <option value="0" selected="">=請選擇=</option>
+                  </select>
+                </div>
+
+                <div class="btn_right">
+                  <button class="btn btn-orange">新增</button>
+                  <button class="btn btn-primary">查詢</button>
+                </div>
+              </div>
+              <!-- 查詢結果 -->
+              <div class="_head">
+                <!-- 頁碼 -->
+                <div class="pagination">
+                  <form action="" class="form_inline">
+                    <div class="total">
+                      共<span>308</span>筆資料，第<span>1/18</span>頁，每頁顯示
+                      <select name="" id="">
+                        <option value="">10</option>
+                        <option value="">30</option>
+                        <option value="" selected>50</option>
+                        <option value="">100</option>
+                      </select>
+                      筆，顯示條件： <a href="#">清除條件</a>
+                    </div>
+                  </form>
+                  <ul class="page">
+                    <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+                    <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+                    <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="_content">
+                <!-- 表格樣式 對齊class:置中 aCenter、置左 aLeft、置右 aRight、不換行nowrap-->
+                <div class="table_wrapper sticky_th">
+                  <table summary="資料表格" class="table_hover">
+                    <tbody>
+                      <tr>
+                        <th>名稱</th>
+                        <th width="9%">類別</th>
+                        <th>梯次數</th>
+                        <th width="9%">狀態</th>
+                        <th>進度</th>
+                      </tr>
+
+                      <tr>
+                        <td><a href="onlineRegistration_edit.jsp?pk=90">【彰化場】2021年農藥POS系統實機教育訓練-(巨匠電腦彰化認證中心)</a></td>
+                        <td class="aCenter">POS系統</td>
+                        <td class="aCenter">1<a href="#" class="toggler" data-prod-cat="1">展開資訊</a></td>
+                        <td class="aCenter">關閉</td>
+                        <td class="aCenter">已結束</td>
+                      </tr>
+
+                      <tr class="cat1" style="display: none">
+                        <td colspan="5">
+                          <table class="subtable">
+                            <tbody>
+                              <tr>
+                                <th>梯次</th>
+                                <th>報名起訖</th>
+                                <th>辦理時間</th>
+                                <th>人數(目前報名狀況)</th>
+                                <th width="15%">進度</th>
+                                <th>報名清單</th>
+                              </tr>
+
+                              <tr>
+                                <td>1</td>
+                                <td>2021/09/13 00:00 ~ 2021/10/13 00:00</td>
+                                <td>2021/10/15 14:00 ~ 2021/10/15 17:00</td>
+                                <td>9 / 1 (<span class="notice">5 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=90,1">查看</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><a href="onlineRegistration_edit.jsp?pk=89">【雲林場】2021年農藥POS系統實機教育訓練-(巨匠電腦斗六認證中心)</a></td>
+                        <td class="aCenter">POS系統</td>
+                        <td class="aCenter">1<a href="#" class="toggler" data-prod-cat="2">展開資訊</a></td>
+                        <td class="aCenter">關閉</td>
+                        <td class="aCenter">已結束</td>
+                      </tr>
+
+                      <tr class="cat2" style="display: none">
+                        <td colspan="5">
+                          <table class="subtable">
+                            <tbody>
+                              <tr>
+                                <th>梯次</th>
+                                <th>報名起訖</th>
+                                <th>辦理時間</th>
+                                <th>人數(目前報名狀況)</th>
+                                <th width="15%">進度</th>
+                                <th>報名清單</th>
+                              </tr>
+
+                              <tr>
+                                <td>1</td>
+                                <td>2021/09/08 00:00 ~ 2021/10/04 00:00</td>
+                                <td>2021/10/06 14:00 ~ 2021/10/06 17:00</td>
+                                <td>13 / 2 (<span class="notice">13 / 2</span>)</td>
+                                <td>已結束(已額滿)</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=89,1">查看</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><a href="onlineRegistration_edit.jsp?pk=88">【屏東場】2021年農藥POS系統實機教育訓練-(巨匠電腦屏東認證中心)</a></td>
+                        <td class="aCenter">POS系統</td>
+                        <td class="aCenter">4<a href="#" class="toggler" data-prod-cat="3">展開資訊</a></td>
+                        <td class="aCenter">關閉</td>
+                        <td class="aCenter">已結束</td>
+                      </tr>
+
+                      <tr class="cat3" style="display: none">
+                        <td colspan="5">
+                          <table class="subtable">
+                            <tbody>
+                              <tr>
+                                <th>梯次</th>
+                                <th>報名起訖</th>
+                                <th>辦理時間</th>
+                                <th>人數(目前報名狀況)</th>
+                                <th width="15%">進度</th>
+                                <th>報名清單</th>
+                              </tr>
+
+                              <tr>
+                                <td>4</td>
+                                <td>2021/09/07 00:00 ~ 2021/10/20 00:00</td>
+                                <td>2021/10/22 14:00 ~ 2021/10/22 17:00</td>
+                                <td>9 / 1 (<span class="notice">6 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=88,4">查看</a></td>
+                              </tr>
+
+                              <tr>
+                                <td>3</td>
+                                <td>2021/09/07 00:00 ~ 2021/10/20 00:00</td>
+                                <td>2021/10/22 09:30 ~ 2021/10/22 12:30</td>
+                                <td>9 / 1 (<span class="notice">9 / 0</span>)</td>
+                                <td>已結束(已額滿)</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=88,3">查看</a></td>
+                              </tr>
+
+                              <tr>
+                                <td>2</td>
+                                <td>2021/09/07 00:00 ~ 2021/09/22 00:00</td>
+                                <td>2021/09/24 14:00 ~ 2021/09/24 17:00</td>
+                                <td>9 / 1 (<span class="notice">4 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=88,2">查看</a></td>
+                              </tr>
+
+                              <tr>
+                                <td>1</td>
+                                <td>2021/09/07 00:00 ~ 2021/09/22 00:00</td>
+                                <td>2021/09/24 09:30 ~ 2021/09/24 12:30</td>
+                                <td>9 / 1 (<span class="notice">9 / 1</span>)</td>
+                                <td>已結束(已額滿)</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=88,1">查看</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><a href="onlineRegistration_edit.jsp?pk=87">【嘉義場】2021年農藥POS系統實機教育訓練-(巨匠電腦嘉義認證中心)</a></td>
+                        <td class="aCenter">POS系統</td>
+                        <td class="aCenter">3<a href="#" class="toggler" data-prod-cat="4">展開資訊</a></td>
+                        <td class="aCenter">關閉</td>
+                        <td class="aCenter">已結束</td>
+                      </tr>
+
+                      <tr class="cat4" style="display: none">
+                        <td colspan="5">
+                          <table class="subtable">
+                            <tbody>
+                              <tr>
+                                <th>梯次</th>
+                                <th>報名起訖</th>
+                                <th>辦理時間</th>
+                                <th>人數(目前報名狀況)</th>
+                                <th width="15%">進度</th>
+                                <th>報名清單</th>
+                              </tr>
+
+                              <tr>
+                                <td>3</td>
+                                <td>2021/09/08 00:00 ~ 2021/10/13 00:00</td>
+                                <td>2021/10/15 14:00 ~ 2021/10/15 17:00</td>
+                                <td>13 / 2 (<span class="notice">6 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=87,3">查看</a></td>
+                              </tr>
+
+                              <tr>
+                                <td>2</td>
+                                <td>2021/09/08 00:00 ~ 2021/10/13 00:00</td>
+                                <td>2021/10/15 09:30 ~ 2021/10/15 12:30</td>
+                                <td>13 / 2 (<span class="notice">12 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=87,2">查看</a></td>
+                              </tr>
+
+                              <tr>
+                                <td>1</td>
+                                <td>2021/09/08 00:00 ~ 2021/09/22 00:00</td>
+                                <td>2021/09/24 14:00 ~ 2021/09/24 17:00</td>
+                                <td>13 / 2 (<span class="notice">8 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=87,1">查看</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><a href="onlineRegistration_edit.jsp?pk=86">【南投場】2021年農藥POS系統實機教育訓練-(巨匠電腦草屯認證中心)</a></td>
+                        <td class="aCenter">POS系統</td>
+                        <td class="aCenter">1<a href="#" class="toggler" data-prod-cat="5">展開資訊</a></td>
+                        <td class="aCenter">關閉</td>
+                        <td class="aCenter">已結束</td>
+                      </tr>
+
+                      <tr class="cat5" style="display: none">
+                        <td colspan="5">
+                          <table class="subtable">
+                            <tbody>
+                              <tr>
+                                <th>梯次</th>
+                                <th>報名起訖</th>
+                                <th>辦理時間</th>
+                                <th>人數(目前報名狀況)</th>
+                                <th width="15%">進度</th>
+                                <th>報名清單</th>
+                              </tr>
+
+                              <tr>
+                                <td>1</td>
+                                <td>2021/09/07 00:00 ~ 2021/09/20 00:00</td>
+                                <td>2021/09/22 14:00 ~ 2021/09/22 17:00</td>
+                                <td>11 / 1 (<span class="notice">3 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=86,1">查看</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><a href="onlineRegistration_edit.jsp?pk=85">【台中場】2021年農藥POS系統實機教育訓練-(巨匠電腦公益認證中心)</a></td>
+                        <td class="aCenter">POS系統</td>
+                        <td class="aCenter">1<a href="#" class="toggler" data-prod-cat="6">展開資訊</a></td>
+                        <td class="aCenter">關閉</td>
+                        <td class="aCenter">已結束</td>
+                      </tr>
+
+                      <tr class="cat6" style="display: none">
+                        <td colspan="5">
+                          <table class="subtable">
+                            <tbody>
+                              <tr>
+                                <th>梯次</th>
+                                <th>報名起訖</th>
+                                <th>辦理時間</th>
+                                <th>人數(目前報名狀況)</th>
+                                <th width="15%">進度</th>
+                                <th>報名清單</th>
+                              </tr>
+
+                              <tr>
+                                <td>1</td>
+                                <td>2021/09/07 00:00 ~ 2021/09/15 00:00</td>
+                                <td>2021/09/17 14:00 ~ 2021/09/17 17:00</td>
+                                <td>13 / 2 (<span class="notice">9 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=85,1">查看</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><a href="onlineRegistration_edit.jsp?pk=84">【臺東場】2021年農藥POS系統實機教育訓練-(巨匠電腦台東認證中心)</a></td>
+                        <td class="aCenter">POS系統</td>
+                        <td class="aCenter">2<a href="#" class="toggler" data-prod-cat="7">展開資訊</a></td>
+                        <td class="aCenter">關閉</td>
+                        <td class="aCenter">已結束</td>
+                      </tr>
+
+                      <tr class="cat7" style="display: none">
+                        <td colspan="5">
+                          <table class="subtable">
+                            <tbody>
+                              <tr>
+                                <th>梯次</th>
+                                <th>報名起訖</th>
+                                <th>辦理時間</th>
+                                <th>人數(目前報名狀況)</th>
+                                <th width="15%">進度</th>
+                                <th>報名清單</th>
+                              </tr>
+
+                              <tr>
+                                <td>2</td>
+                                <td>2021/09/07 00:00 ~ 2021/09/24 00:00</td>
+                                <td>2021/09/28 09:30 ~ 2021/09/28 12:30</td>
+                                <td>13 / 2 (<span class="notice">3 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=84,2">查看</a></td>
+                              </tr>
+
+                              <tr>
+                                <td>1</td>
+                                <td>2021/09/07 00:00 ~ 2021/09/24 00:00</td>
+                                <td>2021/09/27 09:30 ~ 2021/09/27 12:30</td>
+                                <td>13 / 2 (<span class="notice">7 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=84,1">查看</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><a href="onlineRegistration_edit.jsp?pk=83">【花蓮場】2021年農藥POS系統實機教育訓練-(巨匠電腦花蓮認證中心)</a></td>
+                        <td class="aCenter">POS系統</td>
+                        <td class="aCenter">2<a href="#" class="toggler" data-prod-cat="8">展開資訊</a></td>
+                        <td class="aCenter">關閉</td>
+                        <td class="aCenter">已結束</td>
+                      </tr>
+
+                      <tr class="cat8" style="display: none">
+                        <td colspan="5">
+                          <table class="subtable">
+                            <tbody>
+                              <tr>
+                                <th>梯次</th>
+                                <th>報名起訖</th>
+                                <th>辦理時間</th>
+                                <th>人數(目前報名狀況)</th>
+                                <th width="15%">進度</th>
+                                <th>報名清單</th>
+                              </tr>
+
+                              <tr>
+                                <td>2</td>
+                                <td>2021/09/07 00:00 ~ 2021/10/07 00:00</td>
+                                <td>2021/10/07 09:30 ~ 2021/10/07 12:30</td>
+                                <td>1 / 1 (<span class="notice">1 / 0</span>)</td>
+                                <td>已結束(已額滿)</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=83,2">查看</a></td>
+                              </tr>
+
+                              <tr>
+                                <td>1</td>
+                                <td>2021/09/07 00:00 ~ 2021/10/01 00:00</td>
+                                <td>2021/10/04 09:30 ~ 2021/10/04 12:30</td>
+                                <td>10 / 1 (<span class="notice">6 / 0</span>)</td>
+                                <td>已結束</td>
+                                <td><a href="onlineRegistration_sinfo.jsp?pk=83,1">查看</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- 頁碼 -->
+                <div class="pagination">
+                  <ul class="page">
+                    <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+                    <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+                    <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- 查詢結果end -->
+            </div>
+            <!-- 主要內容區 end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>

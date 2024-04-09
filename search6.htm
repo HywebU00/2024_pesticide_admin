@@ -29,22 +29,23 @@
         <div class="breadcrumb">
           <ul>
             <li><a href="mp.htm">首頁</a></li>
-            <li><a href="#">未陳報名單</a></li>
-            <li>零售未回傳名單</li>
+            <li><a href="#">零售查詢</a></li>
+            <li>零售店銷售紀錄</li>
           </ul>
         </div>
         <!-- gird section -->
         <div class="grid">
           <div class="container">
             <div class="title">
-              <h2>稽催作業</h2>
+              <h2>零售查詢</h2>
             </div>
 
             <!-- 主要內容區  -->
             <div class="content_block search_block">
               <!-- 標題 -->
               <div class="_head">
-                <h3><span>零售未回傳名單</span></h3>
+                <h3><span>零售店銷售紀錄</span></h3>
+                <p class="int">目的：主要提供使用者查詢各農藥販賣業者陳報的零售交易紀錄，並限制查詢的交易日期區間為12月內。</p>
               </div>
               <div class="_content">
                 <div class="table_wrapper th_left">
@@ -159,14 +160,6 @@
                         </td>
                       </tr>
                       <tr>
-                        <th>重要性</th>
-                        <td>
-                          <input name="" type="text" value="" placeholder="1" style="width: 10em" />
-                          <input name="show_formcode" type="checkbox" value="1" />置頂
-                          <div class="notice_warning">至少擇一條件輸入</div>
-                        </td>
-                      </tr>
-                      <tr>
                         <th>報表欲呈現的欄位</th>
                         <td>
                           <input name="show_formcode" type="checkbox" value="1" />劑型 <input name="show_contents" type="checkbox" value="1" />含量(%) <input name="show_e_vol" type="checkbox" value="1" />容量單位 <input name="show_spec" type="checkbox" value="1" />包裝
@@ -194,17 +187,47 @@
                 </div>
               </div>
               <hr />
+              <!-- 第2表格 -->
+              <div>
+                <table class="table_hover2">
+                  <caption>
+                    無銷售月份(V:已陳報 X:未陳報 無:無銷售 -:未登記營業別)
+                  </caption>
+                  <tbody>
+                    <tr>
+                      <th>陳報業者</th>
+                      <th>2023-01</th>
+                      <th>2023-02</th>
+                      <th>2023-03</th>
+                      <th>2023-04</th>
+                      <th>2023-05</th>
+                      <th>2023-06</th>
+                    </tr>
+                    <tr>
+                      <td class="aCenter">基隆市農會(Q00002)</td>
+                      <td class="aCenter">V</td>
+                      <td class="aCenter">V</td>
+                      <td class="aCenter">V</td>
+                      <td class="aCenter">V</td>
+                      <td class="aCenter">V</td>
+                      <td class="aCenter">V</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 第2表格 end-->
               <!-- 統計截止日期 -->
               <div class="_head">
-                <ul class="ullist">
+                <!-- <ul class="ullist">
                   <li>統計截止日期：2024/01/15</li>
                   <li>報表產出日期：2024/01/15</li>
-                </ul>
+                </ul> -->
                 <div class="btn_right">
                   <button class="btn btn-primary">匯出報表</button>
                 </div>
               </div>
               <!-- 查詢結果 -->
+
               <div class="_head">
                 <!-- 頁碼 -->
                 <div class="pagination">
@@ -242,7 +265,7 @@
                 <!-- 表格樣式 對齊class:置中 aCenter、置左 aLeft、置右 aRight、不換行nowrap-->
                 <div class="table_wrapper sticky_th">
                   <table summary="資料表格" class="table_hover">
-                    <thead>
+                    <tbody>
                       <tr>
                         <th>編號</th>
                         <th>陳報業者</th>
@@ -251,230 +274,139 @@
                         <th>交易日期</th>
                         <th>農藥條碼</th>
                         <th>農藥普通名稱</th>
-                        <th>劑型</th>
-                        <th>含量(%)</th>
-                        <th>容量單位</th>
-                        <th>包裝</th>
                         <th>銷售數量</th>
-                        <th>作物</th>
-                        <th>病蟲害</th>
                         <th>交易對象</th>
-                        <th>備註</th>
-                        <th>資料來源</th>
-                        <th>資料轉置時間</th>
                       </tr>
-                      <!--  xxx: Excel -->
-                    </thead>
-                    <tbody>
                       <tr>
                         <td class="aCenter">1</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242052271</td>
-                        <td>亞托敏(F226)</td>
-                        <td class="aCenter">SC</td>
-                        <td>250 g/L (25% w/v)</td>
-                        <td>250cc</td>
-                        <td>HD塑膠瓶</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4711242085767</td>
+                        <td>嘉磷塞異丙胺鹽(H126)</td>
                         <td class="aCenter">1</td>
-                        <td>梨</td>
-                        <td>輪紋病</td>
-                        <td>林國文(G120998188)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>林阿妹(U200964518)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">2</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242053025</td>
-                        <td>賽速安(I235)</td>
-                        <td class="aCenter">SG</td>
-                        <td>25.000 (%)</td>
-                        <td>50g</td>
-                        <td>鋁袋</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4719869060365</td>
+                        <td>嘉磷塞異丙胺鹽(H126)</td>
                         <td class="aCenter">2</td>
-                        <td>梨</td>
-                        <td>柑桔捲葉蚜</td>
-                        <td>林國文(G120998188)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>余美貞(C200277524)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">3</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242053155</td>
-                        <td>賽洛寧(I175)</td>
-                        <td class="aCenter">CS</td>
-                        <td>2.460 (%)</td>
-                        <td>500cc</td>
-                        <td>塑膠瓶</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4719869060365</td>
+                        <td>嘉磷塞異丙胺鹽(H126)</td>
                         <td class="aCenter">1</td>
-                        <td>鼠李科梨果類</td>
-                        <td>夜蛾類</td>
-                        <td>林國文(G120998188)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>朱慶華(C100337872)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">4</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242165186</td>
-                        <td>百利普芬(I224)</td>
-                        <td class="aCenter">EC</td>
-                        <td>11.000 (%)</td>
-                        <td>500ml</td>
-                        <td>寶特瓶</td>
-                        <td class="aCenter">1</td>
-                        <td>鼠李科梨果類</td>
-                        <td>介殼蟲類</td>
-                        <td>林國文(G120998188)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4719869060365</td>
+                        <td>嘉磷塞異丙胺鹽(H126)</td>
+                        <td class="aCenter">4</td>
+                        <td>朱仲箎(C120662018)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">5</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242179695</td>
-                        <td>待克利(F196)</td>
-                        <td class="aCenter">EC</td>
-                        <td>250 g/L (25% w/v)</td>
-
-                        <td>500cc</td>
-                        <td>塑膠瓶</td>
-                        <td class="aCenter">1</td>
-                        <td>梨</td>
-                        <td>黑星病</td>
-                        <td>林國文(G120998188)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4719869060365</td>
+                        <td>嘉磷塞異丙胺鹽(H126)</td>
+                        <td class="aCenter">3</td>
+                        <td>楊清來(C101147827)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">6</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242185979</td>
-                        <td>賜派芬(A053)</td>
-                        <td class="aCenter">SC</td>
-                        <td>30.000 (%)</td>
-                        <td>500ml</td>
-                        <td>塑膠瓶</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4719869062413</td>
+                        <td>加保利(I023)</td>
                         <td class="aCenter">1</td>
-                        <td>鼠李科梨果類</td>
-                        <td>柑桔葉蟎</td>
-                        <td>林國文(G120998188)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>許初男(C100294676)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">7</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242052271</td>
-                        <td>亞托敏(F226)</td>
-                        <td class="aCenter">SC</td>
-                        <td>250 g/L (25% w/v)</td>
-                        <td>250cc</td>
-                        <td>HD塑膠瓶</td>
-                        <td class="aCenter">5</td>
-                        <td>瓜果類</td>
-                        <td>蔓枯病</td>
-                        <td>林阿枝(G101496472)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4719869060365</td>
+                        <td>嘉磷塞異丙胺鹽(H126)</td>
+                        <td class="aCenter">1</td>
+                        <td>王李寶蓮(C200267055)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">8</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242052448</td>
-                        <td>賽普洛(F221)</td>
-                        <td class="aCenter">WG</td>
-                        <td>50.000 (%)</td>
-                        <td>250g</td>
-                        <td>鋁袋</td>
-                        <td class="aCenter">6</td>
-                        <td>瓜果類</td>
-                        <td>白粉病</td>
-                        <td>林阿枝(G101496472)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4719869060365</td>
+                        <td>嘉磷塞異丙胺鹽(H126)</td>
+                        <td class="aCenter">1</td>
+                        <td>謝文章(F103596189)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">9</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242053025</td>
-                        <td>賽速安(I235)</td>
-                        <td class="aCenter">SG</td>
-                        <td>25.000 (%)</td>
-                        <td>50g</td>
-                        <td>鋁袋</td>
-                        <td class="aCenter">10</td>
-                        <td>瓜果類</td>
-                        <td>粉蝨類</td>
-                        <td>林阿枝(G101496472)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4711242176014</td>
+                        <td>馬拉松(I107)</td>
+                        <td class="aCenter">1</td>
+                        <td>曾阿粉(H200330183)</td>
                       </tr>
 
                       <tr>
                         <td class="aCenter">10</td>
-                        <td>弘大農藥行(A00024)</td>
-                        <td class="aCenter">宜蘭縣</td>
-                        <td class="aCenter">三星鄉</td>
-                        <td class="nowrap">2024/03/31</td>
-                        <td class="nowrap">4711242053377</td>
-                        <td>派滅淨(I215)</td>
-                        <td class="aCenter">WG</td>
-                        <td>50.000 (%)</td>
-                        <td>100g</td>
-                        <td>鋁袋</td>
-                        <td class="aCenter">10</td>
-                        <td>瓜果類</td>
-                        <td>蚜蟲類</td>
-                        <td>林阿枝(G101496472)</td>
-                        <td></td>
-                        <td>單機POS</td>
-                        <td>2024/03/31<br />18:16:31</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4719869060365</td>
+                        <td>嘉磷塞異丙胺鹽(H126)</td>
+                        <td class="aCenter">1</td>
+                        <td>曾阿粉(H200330183)</td>
+                      </tr>
+
+                      <tr>
+                        <td class="aCenter">11</td>
+                        <td>基隆市農會(Q00002)</td>
+                        <td class="aCenter">基隆市</td>
+                        <td class="aCenter">七堵區</td>
+                        <td class="aCenter">2023/06/27</td>
+                        <td class="aCenter">4711242176014</td>
+                        <td>馬拉松(I107)</td>
+                        <td class="aCenter">1</td>
+                        <td>張清波(C100305727)</td>
                       </tr>
                     </tbody>
                   </table>

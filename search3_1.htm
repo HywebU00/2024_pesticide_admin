@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="mp.htm">首頁</a></li>
+            <li><a href="#">稽催功能管理</a></li>
+            <li>稽催縣市政府人員(初催)</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>稽催功能管理</h2>
+            </div>
+
+            <!-- 主要內容區  -->
+            <div class="content_block search_block">
+              <!-- 標題 -->
+              <div class="_head">
+                <h3><span>稽催縣市政府人員(初催)</span></h3>
+                <p class="int">稽催頻率設定：每年度依據設定的稽催信寄發日期寄出稽催信，以提醒縣市政府人員稽核轄下的農藥販賣業者。</p>
+              </div>
+
+              <!-- 新增/查詢 -->
+              <div class="_content">
+                <!-- 表格樣式 對齊class:置中 aCenter、置左 aLeft、置右 aRight-->
+                <div class="table_wrapper sticky_th">
+                  <table summary="資料表格" class="table_hover">
+                    <tbody>
+                      <tr>
+                        <th>角色</th>
+                        <th>陳報日期區間</th>
+                        <th>陳報截止日</th>
+                        <th>稽催信寄送日</th>
+                        <th>管理</th>
+                      </tr>
+
+                      <tr>
+                        <td class="aCenter">批發</td>
+                        <td>每兩個月</td>
+                        <td>次月15日</td>
+                        <td>次月10日</td>
+                        <td class="aCenter"><button class="do_delete" name="button" type="button">刪除</button></td>
+                      </tr>
+
+                      <tr>
+                        <td class="aCenter">零售</td>
+                        <td>每兩個月</td>
+                        <td>次月15日</td>
+                        <td>次月10日</td>
+                        <td class="aCenter"><button class="do_delete" name="button" type="button">刪除</button></td>
+                      </tr>
+
+                      <tr>
+                        <form name="form1" action="expediting_gov1.jsp?act=add" method="post"></form>
+                        <input type="hidden" name="cycleId" value="4" />
+                        <td class="aCenter">
+                          <select name="auditRole">
+                            <option value="1">批發</option>
+                            <option value="2">零售</option>
+                          </select>
+                        </td>
+                        <td>
+                          <input name="auditCycle" type="radio" value="1" />每一個月(如：1月)<br />
+                          <input checked="" name="auditCycle" type="radio" value="2" />每兩個月(如：1,2月；3,4月)<br />
+                          <input name="auditCycle" type="radio" value="3" />每三個月(如：1,2,3月；4,5,6月)
+                        </td>
+                        <td>
+                          次月<select name="auditdate">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option selected="">15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                          </select>
+                          日
+                        </td>
+                        <td>
+                          次月
+                          <select name="senddate">
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option selected="">17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                          </select>
+                          日
+                        </td>
+                        <td class="aCenter"><button class="do_save" name="button" type="button">儲存</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- 按鈕 -->
+                  <div class="btn_grp">
+                    <input type="submit" class="btn btn-primary" value="回上一頁" />
+                  </div>
+                </div>
+              </div>
+              <!-- 新增/查詢 end -->
+            </div>
+            <!-- 主要內容區 end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>

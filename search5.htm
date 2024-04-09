@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="mp.htm">首頁</a></li>
+            <li><a href="#">報表與統計分析模組</a></li>
+            <li>批號追蹤</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>報表與統計分析模組</h2>
+            </div>
+
+            <!-- 主要內容區  -->
+            <div class="content_block search_block">
+              <!-- 標題 -->
+              <div class="_head">
+                <h3><span>批號追蹤</span></h3>
+              </div>
+              <div class="_content">
+                <div class="table_wrapper th_left">
+                  <table class="table_hover">
+                    <tbody>
+                      <tr>
+                        <th>地區</th>
+                        <td>
+                          <select id="cityId" name="cityId">
+                            <option value="" selected="">全部縣市</option>
+                            <option value="02">基隆市</option>
+                            <option value="01">臺北市</option>
+                            <option value="03">新北市</option>
+                            <option value="09">桃園市</option>
+                            <option value="07">新竹市</option>
+                            <option value="08">新竹縣</option>
+                            <option value="10">苗栗縣</option>
+                            <option value="11">臺中市</option>
+                            <option value="13">彰化縣</option>
+                            <option value="14">南投縣</option>
+                            <option value="17">雲林縣</option>
+                            <option value="15">嘉義市</option>
+                            <option value="16">嘉義縣</option>
+                            <option value="18">臺南市</option>
+                            <option value="20">高雄市</option>
+                            <option value="25">屏東縣</option>
+                            <option value="05">宜蘭縣</option>
+                            <option value="27">花蓮縣</option>
+                            <option value="26">臺東縣</option>
+                            <option value="23">澎湖縣</option>
+                            <option value="24">金門縣</option>
+                            <option value="04">連江縣</option>
+                          </select>
+                          <select id="zipcode" name="zipcode">
+                            <option value="" selected="">全部鄉鎮</option>
+                          </select>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th><abbr>*</abbr>農藥條碼(必填)</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="4710552069719" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>農藥批號</th>
+                        <td>
+                          <input name="" type="text" value="" placeholder="1110722311" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>製造日期</th>
+                        <td>
+                          <input type="date" name="party" min="" max="" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- 按鈕 -->
+                  <div class="btn_grp">
+                    <input type="submit" class="btn btn-primary" value="查詢" />
+                    <!--  -->
+                    <input type="reset" class="btn btn-normal" value="重設" />
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <!-- 統計截止日期 -->
+              <div class="_head">
+                <ul class="ullist">
+                  <li>統計截止日期：2024/01/15</li>
+                  <li>報表產出日期：2024/01/15</li>
+                </ul>
+                <div class="btn_right">
+                  <button class="btn btn-primary">匯出報表</button>
+                </div>
+              </div>
+              <!-- 查詢結果 -->
+              <!-- 第2表格 -->
+              <div>
+                <table class="table_hover2">
+                  <thead>
+                    <tr>
+                      <th>農藥普通名稱</th>
+                      <th>劑型</th>
+                      <th>含量</th>
+                      <th>容量</th>
+                      <th>包裝</th>
+                      <th>農藥條碼</th>
+                      <th>製造日期</th>
+                      <th>農藥批號</th>
+                      <th>製造商</th>
+                      <th>統一編號</th>
+                      <th>總出貨量</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>陶斯松</td>
+                      <td>乳劑(EC )</td>
+                      <td>40.800 (%)</td>
+                      <td class="aCenter">470cc</td>
+                      <td>HD塑膠瓶</td>
+                      <td class="aCenter">4710552069719</td>
+                      <td class="aCenter">2022/07/22</td>
+                      <td class="aCenter">1110722311</td>
+                      <td>興農股份有限公司</td>
+                      <td class="aCenter">51911712</td>
+                      <td class="aCenter">46</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 第2表格 end-->
+              <div class="_head">
+                <!-- 頁碼 -->
+                <div class="pagination">
+                  <form action="" class="form_inline">
+                    <div class="total">
+                      共<span>308</span>筆資料，第<span>1/18</span>頁，每頁顯示
+                      <select name="" id="">
+                        <option value="">10</option>
+                        <option value="">30</option>
+                        <option value="" selected>50</option>
+                        <option value="">100</option>
+                      </select>
+                      筆
+                    </div>
+                  </form>
+                  <ul class="page">
+                    <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+                    <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+                    <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="_content">
+                <!-- 表格樣式 對齊class:置中 aCenter、置左 aLeft、置右 aRight、不換行nowrap-->
+                <div class="table_wrapper sticky_th">
+                  <table summary="資料表格" class="table_hover">
+                    <tbody>
+                      <tr>
+                        <th>編號</th>
+                        <th>批發業者</th>
+                        <th>縣市</th>
+                        <th>鄉鎮</th>
+                        <th>客戶名稱</th>
+                        <th>縣市</th>
+                        <th>鄉鎮</th>
+                        <th>數量</th>
+                      </tr>
+                      <tr>
+                        <td class="aCenter">1</td>
+                        <td>興農股份有限公司(F00031)</td>
+                        <td class="aCenter">臺中市</td>
+                        <td class="aCenter">大肚區</td>
+                        <td>興農股份有限公司牛眠營業所(G00075)</td>
+                        <td class="aCenter">南投縣</td>
+                        <td class="aCenter">埔里鎮</td>
+                        <td class="aCenter">
+                          <a href="#">23</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="aCenter">2</td>
+                        <td>興農股份有限公司北山營業所(G00154)</td>
+                        <td class="aCenter">南投縣</td>
+                        <td class="aCenter">國姓鄉</td>
+                        <td>興農股份有限公司北山營業所(G00154)</td>
+                        <td class="aCenter">南投縣</td>
+                        <td class="aCenter">國姓鄉</td>
+                        <td class="aCenter">
+                          <a href="#">23</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- 頁碼 -->
+                <div class="pagination">
+                  <ul class="page">
+                    <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+                    <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+                    <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- 查詢結果end -->
+            </div>
+            <!-- 主要內容區 end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>

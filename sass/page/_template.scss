@@ -157,6 +157,7 @@ body {
   margin-right: 1em;
   position: relative;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  min-height: 100vh;
   // max-width: 90em;
   &.full {
     margin-left: 5em;
@@ -814,21 +815,20 @@ body {
         display: none;
       }
     }
+    .listfunction {
+      flex: 1 1 auto;
+      margin-bottom: 0.5em;
+      label {
+        display: inline-block;
+        font-weight: bold;
+      }
+      select {
+        width: auto;
+      }
+    }
     .btn_right {
       flex: 1 1 auto;
       text-align: right;
-      .btn {
-        background: rgb(58, 150, 91);
-        background: linear-gradient(180deg, rgba(58, 150, 91, 1) 0%, rgba(53, 136, 83, 1) 35%, rgba(49, 120, 75, 1) 100%);
-        color: #fff;
-        font-weight: bold;
-        padding: 0.5em 2em;
-        &:hover,
-        &:focus {
-          background: rgb(58, 150, 91);
-          background: linear-gradient(0deg, rgba(58, 150, 91, 1) 0%, rgba(53, 136, 83, 1) 35%, rgba(49, 120, 75, 1) 100%);
-        }
-      }
     }
     .ullist {
       margin: 1em 0;
@@ -893,6 +893,10 @@ body {
           font-size: 0.75em;
         }
       }
+    }
+    .int {
+      margin: 0 0 1em;
+      color: #c00;
     }
   }
   ._content {

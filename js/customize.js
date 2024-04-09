@@ -550,3 +550,11 @@ $(function () {
     $('.modal .close').click(closeModal);
   });
 });
+
+//資訊表格收合
+$(document).ready(function () {
+  $('.toggler').click(function (e) {
+    e.preventDefault();
+    $('.cat' + $(this).attr('data-prod-cat')).toggle();
+  });
+});

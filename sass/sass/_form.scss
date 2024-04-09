@@ -623,7 +623,7 @@ textarea {
   -webkit-appearance: none; //清除 safari 的預設樣式
   -moz-appearance: none;
   appearance: none;
-  font-weight: bold;
+  // font-weight: bold;
   background: #fff;
 }
 select {
@@ -716,7 +716,7 @@ input[type='file'] {
 //---------------------------------------------下拉選單--------//
 select {
   line-height: 3em;
-  font-weight: bold;
+  // font-weight: bold;
   height: 3em;
   padding: 0 24px 0 0.5em;
   border-radius: 3px;
