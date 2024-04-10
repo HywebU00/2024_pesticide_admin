@@ -669,6 +669,8 @@ input[type='button'] {
 input[type='submit'] {
   @extend %btn;
   @include btn_setting($form-btn, #fff);
+  background: rgb(58, 150, 91);
+  background: linear-gradient(180deg, rgba(58, 150, 91, 1) 0%, rgba(53, 136, 83, 1) 35%, rgba(49, 120, 75, 1) 100%);
 }
 textarea {
   @include formStyle();
@@ -752,6 +754,14 @@ input[type='reset'] {
   @extend %btn;
   @include btn_setting(darken($color-gray, 20), #fff);
   text-shadow: none;
+  background: rgb(153, 153, 153);
+  background: linear-gradient(180deg, rgba(153, 153, 153, 1) 0%, rgba(119, 119, 119, 1) 35%, rgba(102, 102, 102, 1) 100%);
+  &:hover,
+  &:focus {
+    background: rgb(153, 153, 153);
+    background: linear-gradient(0deg, rgba(153, 153, 153, 1) 0%, rgba(119, 119, 119, 1) 35%, rgba(102, 102, 102, 1) 100%);
+    color: #fff;
+  }
 }
 //---------------------------------------------checkbox & radio--------//
 input[type='checkbox'],

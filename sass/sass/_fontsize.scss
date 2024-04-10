@@ -1,52 +1,63 @@
 .font_size {
-    overflow: hidden;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  span {
     display: inline-block;
-    text-align: center;
-    span {
-        display: inline-block;
-        vertical-align: middle;
-        font-size: .938em;
-        color: #666;
-    }
-    ul {
-        display: inline-block;
-        vertical-align: middle;
-        @include li-reset;
-        li {
-            width: 40px;
-            height: 40px;
-            font-size: 1em;
-            float: left;
-            display: block;
-            margin: 0 .2em;
-            a {
-                display: block;
-                text-align: center;
-                line-height: 40px;
-                border-radius: 50%;
-                background: #F1F1F1;
-                color: #333;
-                &:hover, &:focus {
-                    background: $aHover;
-                    color: #FFF;
-                }
-                &.active {
-                    background: #F1F1F1;
-                    &:hover, &:focus {
-                        background: $aHover;
-                        color: #FFF;
-                    }
-                }
-                &.small {
-                    font-size: .938em;
-                }
-                &.large {
-                    font-size: 1.125em;
-                }
-            }
+    vertical-align: middle;
+    font-size: 0.938em;
+    color: #666;
+  }
+  ul {
+    display: inline-block;
+    vertical-align: middle;
+    @include li-reset;
+    li {
+      width: 32px;
+      height: 32px;
+      font-size: 1em;
+      float: left;
+      display: block;
+      margin: 0 0.2em;
+      a {
+        display: block;
+        text-align: center;
+        line-height: 32px;
+        border-radius: 50%;
+        background: #fff;
+        color: #333;
+        &:hover,
+        &:focus {
+          background: $aHover;
+          color: #fff;
         }
+        &.active {
+          // background: #F1F1F1;
+          // box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
+          // background: rgba(255,255,255,.35);
+          background: $primaryColor;
+          color: #fff;
+          &:hover,
+          &:focus {
+            background: $aHover;
+            color: #fff;
+          }
+        }
+        &.small {
+          font-size: 0.938em;
+        }
+        &.large {
+          font-size: 1.125em;
+        }
+      }
     }
-    @include screen('mobile') {
-        display: none;
-    }
+  }
+
+  border-right: dotted 1px rgba(255, 255, 255, 0.5);
+  padding-right: 0.5em;
+  margin-right: 0.5em;
+
+  @include screen('tablet') {
+    display: none;
+  }
 }

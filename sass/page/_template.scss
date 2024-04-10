@@ -6,6 +6,17 @@ html {
 }
 body {
 }
+.content {
+  font-size: 1em;
+
+  &.small_size {
+    font-size: 0.938em;
+  }
+  &.large_size {
+    font-size: 1.25em;
+  }
+} // 預設字級 1em 的倍
+
 code,
 pre {
   font-size: 14px;
@@ -153,7 +164,7 @@ body {
 }
 .content {
   padding: 5em 1.5em 1em 1.5em;
-  margin-left: 17em;
+  margin-left: 17rem;
   margin-right: 1em;
   position: relative;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -206,18 +217,24 @@ body {
     flex-flow: row nowrap;
     justify-content: space-between;
     display: flex;
+    align-items: center;
+    @include screen('mobile') {
+      flex-flow: row wrap;
+    }
     .btn {
-      margin-left: 1em;
-      border: 1px solid #ccc;
-      border-bottom: 2px solid #ccc;
-      background: #f7f7f7;
-      padding-left: 0.2em;
-      padding-right: 0.6em;
-      font-weight: normal;
-      font-size: 0.813rem;
+      // margin-left: 1em;
+      // border: 1px solid #ccc;
+      // border-bottom: 2px solid #ccc;
+      // background: #f7f7f7;
+      // padding-left: 0.2em;
+      // padding-right: 0.6em;
+      // font-weight: normal;
+      font-size: 0.938em;
+      padding: 0.5rem 1.2rem 0.5rem 0.5rem;
       i {
         font-size: 0.938rem;
-        opacity: 0.5;
+        opacity: 1;
+        filter: invert(100%);
       }
       .ink {
         display: none;
@@ -267,6 +284,9 @@ body {
           content: '/';
         }
       }
+      @include screen('mobile') {
+        flex: 1 1 100%;
+      }
     }
     .btn-adv {
       align-self: center;
@@ -284,6 +304,12 @@ body {
       }
       .ink {
         display: block;
+      }
+    }
+    .quick_btn {
+      @include screen('mobile') {
+        flex: 1 1 100%;
+        margin-bottom: 1em;
       }
     }
   }
@@ -868,7 +894,7 @@ body {
         margin: 0 0 0.5em auto;
         flex: 0 1 50%;
         .btn {
-          width: 100%;
+          width: auto;
           margin: 0 !important;
         }
       }
@@ -881,6 +907,7 @@ body {
         border-radius: 0.25em;
         padding: 0.4em 1.2em 0.4em 0.6em;
         align-self: center;
+        border-radius: 2em;
         // margin: 0 0 0 .25em;
         i {
           filter: invert(100%);
@@ -1319,12 +1346,13 @@ table {
     z-index: 9;
     .btn {
       width: 100%;
-      border: 1px solid #eee;
-      background: #eee;
+      border: 1px solid #999;
+      background: #999;
+      color: #fff;
       &:hover,
       &:focus {
-        background: $form-focus;
-        border: 1px solid $form-focus !important;
+        background: #666;
+        border: 1px solid #666 !important;
       }
     }
     .dropdown-content {

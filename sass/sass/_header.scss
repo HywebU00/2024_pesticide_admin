@@ -240,7 +240,7 @@ header {
           vertical-align: top;
           margin: 0 5px;
         }
-        @include screen('mobile') {
+        @include screen('tablet') {
           display: none;
         }
       }
@@ -348,7 +348,7 @@ header {
             border: 1px solid $color-red;
             &:hover,
             &:focus {
-              background: $color-red;
+              background: darken($color-red, 15);
               outline: none;
               border: 1px solid $color-red !important;
             }

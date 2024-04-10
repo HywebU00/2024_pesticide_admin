@@ -391,7 +391,7 @@ table {
       width: 20%;
       min-width: 6em;
       text-align: right;
-      border: dotted 1px $primaryColor;
+      border: dotted 1px lighten($primaryColor, 15);
       border-left: none;
       border-right: none;
       white-space: normal;

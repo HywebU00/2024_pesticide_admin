@@ -23,12 +23,12 @@
       @include box-sizing();
       a {
         border-radius: 5px;
-        padding: 5px;
-        width: 36px;
+        padding: 2px 5px;
+        min-width: 30px;
         font-weight: 700;
         display: block;
         white-space: nowrap;
-        font-size: 1em;
+        font-size: 0.938em;
         color: $wordColor;
         @include gradient(#fff, #f1f1f1, vertical);
         border: #ccc solid 1px;
@@ -53,9 +53,9 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 6px;
-        height: 6px;
-        margin-top: -4px;
+        width: 4px;
+        height: 4px;
+        margin-top: -2px;
         border: 2px solid #666;
         border-left: none;
         border-bottom: none;
