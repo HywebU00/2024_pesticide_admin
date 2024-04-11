@@ -553,6 +553,7 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   width: auto;
   min-width: 4em;
   margin: 0.25em;
+  font-weight: bold;
 }
 
 .btn {
@@ -1325,6 +1326,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   color: #222;
+  background: #fff;
 }
 @media screen and (max-width: 575px) {
   table {
@@ -1541,7 +1543,7 @@ table.table_hover {
   font-size: 0.938em;
 }
 table.table_hover tr:hover {
-  background: #f7fcf7;
+  background: #f3f8eb;
 }
 table.table_hover select {
   width: auto;
@@ -1565,7 +1567,7 @@ table.table_hover2 select {
   width: auto;
 }
 table.table_sprite tr:nth-child(even) {
-  background: #fafcf7;
+  background: #f3f8eb;
 }
 table .num {
   width: 5em;
@@ -2322,7 +2324,7 @@ select::-ms-expand {
 }
 .flex-form .form_content .help {
   font-size: 0.813em;
-  color: #888;
+  color: #666;
   text-align: right;
   margin-left: auto;
   padding: 0 0.5em;
@@ -2691,7 +2693,6 @@ textarea {
   border-radius: 5px;
   transition: 0.3s ease-out;
   align-self: stretch;
-  background: #f4f4f4;
 }
 textarea:hover {
   outline: none;
@@ -2709,10 +2710,6 @@ input[type=text], input[type=calendar], input[type=email], input[type=tel], inpu
   border-radius: 0.2em;
   background: #fff;
 }
-input[type=text]:hover, input[type=text]:focus, input[type=calendar]:hover, input[type=calendar]:focus, input[type=email]:hover, input[type=email]:focus, input[type=tel]:hover, input[type=tel]:focus, input[type=time]:hover, input[type=time]:focus, input[type=url]:hover, input[type=url]:focus {
-  background: #f5f5f5;
-}
-
 input[type=text]:focus,
 input[type=reset]:focus,
 input[type=file]:focus,
@@ -2857,12 +2854,12 @@ input[type=radio]:checked {
 
 input[readonly],
 input[disabled] {
-  background: #eaeaea !important;
-  color: #888;
+  background: #f6f8f5 !important;
+  color: #469658;
 }
 input[readonly] ~ label,
 input[disabled] ~ label {
-  color: #888;
+  color: #469658;
 }
 input[readonly]:hover, input[readonly]:focus,
 input[disabled]:hover,
@@ -2883,7 +2880,7 @@ input[disabled]:focus {
   position: absolute;
   overflow: hidden;
   top: 0px;
-  right: 2px;
+  right: 1px;
   background-color: #469658;
   color: #fff;
   -webkit-border-radius: 2em;
@@ -2892,7 +2889,7 @@ input[disabled]:focus {
   -o-border-radius: 2em;
   border-radius: 2em;
   transition: 0.3s ease-out;
-  padding: 0.2em 1em !important;
+  padding: 0.4em 1em !important;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -2913,18 +2910,6 @@ input[disabled]:focus {
 }
 .upload_grp .upload_btn:hover, .upload_grp .upload_btn:focus {
   cursor: pointer !important;
-}
-
-input[type=file] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 1.25em;
-  cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
 }
 
 img.captcha {
@@ -2997,7 +2982,7 @@ abbr {
   content: "關閉";
   right: -2.5rem;
   font-size: 0.938rem;
-  color: #888;
+  color: #666;
   white-space: nowrap;
 }
 input:checked + .checkSwitch_switch {
@@ -3012,6 +2997,60 @@ input:checked + .checkSwitch_switch:after {
   content: "開啟";
   color: #469658;
   font-weight: bold;
+}
+
+.upload_list {
+  margin: 0.2rem 0;
+  padding: 0 0 0 1em;
+}
+.upload_list li {
+  margin-bottom: 10px;
+  position: relative;
+}
+.upload_list .upload_grp {
+  display: flex;
+}
+.upload_list .upload_file {
+  flex: 1 1 100%;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 767px) {
+  .upload_list .upload_file {
+    flex: 1 1 100%;
+  }
+}
+.upload_list .check_file {
+  flex: 1 1 auto;
+  width: auto;
+  padding: 0.3rem;
+  border: none;
+  background: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.upload_grp2 {
+  position: relative;
+}
+.upload_grp2 .upload_file {
+  flex: 1 1 100%;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 767px) {
+  .upload_grp2 .upload_file {
+    flex: 1 1 100%;
+  }
+}
+.upload_grp2 .check_file {
+  flex: 1 1 auto;
+  width: auto;
+  padding: 0.3rem;
+  border: none;
+  background: none;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 [class^=i_]:before {
@@ -6009,6 +6048,9 @@ div.tag ul li.active a {
   overflow: hidden;
   display: inline-block;
   text-align: center;
+  position: absolute;
+  top: 2rem;
+  right: 0rem;
   border-right: dotted 1px rgba(255, 255, 255, 0.5);
   padding-right: 0.5em;
   margin-right: 0.5em;
@@ -6445,7 +6487,7 @@ pre {
 
 .demo_componet {
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.3);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   display: flex;
   align-self: stretch;
   flex-direction: column;
@@ -6548,9 +6590,9 @@ body.dark {
 }
 
 .content {
-  padding: 5em 1.5em 1em 1.5em;
+  padding: 5rem 1.5rem 1rem 1.5rem;
   margin-left: 17rem;
-  margin-right: 1em;
+  margin-right: 1rem;
   position: relative;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   min-height: 100vh;
@@ -7052,7 +7094,7 @@ body.dark {
 .widget_block,
 .publish_block {
   box-shadow: 0px 6px 15px -13px rgba(0, 0, 0, 0.6);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   display: flex;
   align-self: stretch;
   flex-direction: column;
@@ -7392,6 +7434,11 @@ body.dark {
   flex: 1 1 auto;
   text-align: right;
 }
+.content_block ._head .btn_right .btn,
+.widget_block ._head .btn_right .btn,
+.publish_block ._head .btn_right .btn {
+  padding: 0.5em 1.25em 0.5em 1em;
+}
 .content_block ._head .ullist,
 .widget_block ._head .ullist,
 .publish_block ._head .ullist {
@@ -7579,7 +7626,7 @@ body.dark {
   min-width: 200px;
   margin: 0 10px 0 0;
   box-shadow: 0px 6px 15px -13px rgba(0, 0, 0, 0.6);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   padding: 1em 0.75em;
   border-radius: 0.8em;
   align-self: flex-start;
@@ -7641,7 +7688,7 @@ body.dark {
   top: 0em;
 }
 .publish_block .block {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   padding: 0.5em 1em;
   box-shadow: 0px 6px 15px -13px rgba(0, 0, 0, 0.6);
   border-radius: 0.8em;
@@ -9102,7 +9149,7 @@ table td .dropdown .dropdown-content .btn.btn-red:hover, table td .dropdown .dro
 }
 
 .mpBlock {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   padding: 10px 25px;
   box-shadow: 0px 6px 15px -13px rgba(0, 0, 0, 0.6);
@@ -9189,6 +9236,14 @@ table td .dropdown .dropdown-content .btn.btn-red:hover, table td .dropdown .dro
 
 .aRight {
   text-align: right;
+}
+
+.i_addfile {
+  font-style: normal;
+  background: #469658;
+  border-radius: 50%;
+  padding: 5px 6px;
+  margin-right: 5px;
 }
 
 .mp_widget .help {

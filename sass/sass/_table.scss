@@ -4,6 +4,7 @@ table {
   border-collapse: collapse;
   //   font-size: 0.938em;
   color: #222;
+  background: #fff;
   @include screen('xs_mobile') {
     width: 100%;
   }
@@ -229,7 +230,7 @@ table {
     font-size: 0.938em;
 
     tr:hover {
-      background: #f7fcf7;
+      background: #f3f8eb;
     }
 
     select {
@@ -257,7 +258,7 @@ table {
   }
   &.table_sprite {
     tr:nth-child(even) {
-      background: #fafcf7;
+      background: #f3f8eb;
     }
   }
   .num {

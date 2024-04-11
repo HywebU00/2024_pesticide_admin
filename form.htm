@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="mp.htm">首頁</a></li>
+            <li><a href="#">訊息公告模組</a></li>
+            <li>最新消息維護</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>最新消息維護</h2>
+              <div class="quick_btn">
+                <button onclick="history.back()" class="btn btn-gray"><i class="i_arrow_left"></i>返回前頁</button>
+              </div>
+            </div>
+
+            <!-- 主要內容區  -->
+            <div class="content_block search_block">
+              <!-- 標題 -->
+              <div class="_head">
+                <h3><span>新增最新消息</span></h3>
+              </div>
+              <div class="_content">
+                <div class="table_wrapper th_left">
+                  <table class="table_hover">
+                    <tbody>
+                      <tr>
+                        <th>模式</th>
+                        <td><input name="x_type" type="radio" checked="checked" value="1" />一般內容編輯網頁 <input name="x_type" type="radio" value="2" />點選後直接連結網址</td>
+                      </tr>
+                      <tr>
+                        <th>標題</th>
+                        <td>
+                          <input name="" id="" type="text" autocomplete="" value="" placeholder="請輸入標題" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>網址</th>
+                        <td>
+                          <input name="" id="" type="text" autocomplete="" value="" placeholder="請輸入網址" />
+                          <div class="notice_warning">
+                            請輸入本筆資料要連結的網址，或消息來源、其他參考網址。<br />
+                            此欄位非必填，但若選擇「點選後直接連結網址」模式，請務必輸入連結網址。
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>內文</th>
+                        <td><textarea name="x_context" rows="6" style="width: 95%" cols="20"></textarea></td>
+                      </tr>
+                      <tr>
+                        <th>圖檔</th>
+                        <td>
+                          <div class="upload_grp2"><input name="xja_attachment_0_fname" type="text" value="" class="upload_file" /><input name="" type="file" class="check_file" /></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><abbr>*</abbr>類別</th>
+                        <td>
+                          <select id="m_class" name="x_key">
+                            <option value="0" selected="">=請選擇=</option>
+                            <option value="A">農藥公告</option>
+                            <option value="B">管理人員訓練課程</option>
+                            <option value="C">POS系統課程</option>
+                            <option value="D">產銷陳報</option>
+                            <option value="NP">頁籤</option>
+                            <option value="I">隱私權宣告</option>
+                            <option value="F">資訊安全政策</option>
+                            <option value="G">網站資料開放宣告</option>
+                            <option value="H">操作手冊專區</option>
+                          </select>
+                          <a href="#"><i class="i_addfile invert"></i>新增代碼</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><abbr>*</abbr>狀態</th>
+                        <td>
+                          <select name="x_status">
+                            <option value="1" selected="">公開</option>
+                            <option value="2">關閉</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>另開視窗</th>
+                        <td>
+                          <select name="storeType">
+                            <option value="">是</option>
+                            <option value="" selected>否</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>參考附件</th>
+                        <td>
+                          <ol class="upload_list">
+                            <li>
+                              <div class="upload_grp"><input name="xja_attachment_0_fname" type="text" value="" class="upload_file" /><input name="" type="file" class="check_file" /></div>
+                            </li>
+                            <li>
+                              <div class="upload_grp"><input name="xja_attachment_0_fname" type="text" value="" class="upload_file" /><input name="" type="file" class="check_file" /></div>
+                            </li>
+                            <li>
+                              <div class="upload_grp"><input name="xja_attachment_0_fname" type="text" value="" class="upload_file" /><input name="" type="file" class="check_file" /></div>
+                            </li>
+                            <li>
+                              <div class="upload_grp"><input name="xja_attachment_0_fname" type="text" value="" class="upload_file" /><input name="" type="file" class="check_file" /></div>
+                            </li>
+                            <li>
+                              <div class="upload_grp"><input name="xja_attachment_0_fname" type="text" value="" class="upload_file" /><input name="" type="file" class="check_file" /></div>
+                            </li>
+                          </ol>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>重要性</th>
+                        <td>
+                          <input id="x_important" name="x_important" type="text" size="10" value="1" style="width: 10em" /> <input id="do_important" name="Checkbox14" type="checkbox" /> 置頂
+                          <div class="notice_warning">請輸入1~99數值，數值越高表示越重要。勾選置頂後可將本課程固定於頁面第一則。若同時有多筆課程置頂，則依重要性、公告上線、發布日期進行排序。</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>建置日期</th>
+                        <td>
+                          <input id="xd_ct" name="xd_ct" type="text" value="2024/04/11 14:15" size="20" readonly="" />
+                          <div class="notice_warning">預設自動帶入資料建置日期。</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><abbr>*</abbr>自動上下線</th>
+                        <td>
+                          <div class="flex-form">
+                            <div class="form_grp datepick">
+                              <div class="startDate">
+                                <input type="date" name="party" min="" max="" />
+                              </div>
+                              <div class="endDate">
+                                <input type="date" name="party" min="" max="" />
+                              </div>
+                              <div class="notice_warning">設定公告上下線起訖日期，上線日期預設為資料儲存日期時間。資料將依設定自動上下線。請注意，公告狀態必須設為「公開」。</div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><abbr>*</abbr>辦理日期</th>
+                        <td>
+                          <div class="flex-form">
+                            <div class="form_grp datepick">
+                              <div class="startDate">
+                                <input type="date" name="party" min="" max="" />
+                              </div>
+                              <div class="endDate">
+                                <input type="date" name="party" min="" max="" />
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>來源</th>
+                        <td>
+                          <input name="" id="" type="text" autocomplete="" value="" placeholder="請輸入來源" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- 按鈕 -->
+                  <div class="btn_grp">
+                    <input type="submit" class="btn btn-primary" value="編修存檔" />
+                    <!--  -->
+                    <input type="reset" class="btn btn-normal" value="取消" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 主要內容區 end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>
