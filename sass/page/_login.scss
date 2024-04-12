@@ -122,6 +122,7 @@
       background: rgb(153, 153, 153);
       background: linear-gradient(180deg, rgba(153, 153, 153, 1) 0%, rgba(119, 119, 119, 1) 35%, rgba(102, 102, 102, 1) 100%);
       color: #fff;
+      padding: 0.5em 0.2em;
       &:hover,
       &:focus {
         background: rgb(153, 153, 153);
@@ -157,6 +158,9 @@
   input[type='text'],
   input[type='password'] {
     background: #fff;
+  }
+  .btn-icon {
+    border: none;
   }
 }
 @keyframes fadeInOpacity {

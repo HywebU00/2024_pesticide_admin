@@ -150,8 +150,18 @@ header {
     font-size: 2em;
     @include screen('tablet') {
       font-size: 1.5em;
-      margin: 25px 0 0 45px;
+      margin: 18px 0 0 45px;
       height: auto;
+      background: url('../images/favicon.png') no-repeat left center;
+      background-size: 40px auto;
+      padding: 0.5em 0.2em 0.5em 45px;
+    }
+    @include screen('mobile') {
+      font-size: 1.3em;
+      margin: 25px 0 0 45px;
+      background: url('../images/favicon.png') no-repeat left center;
+      background-size: 30px auto;
+      padding: 0.2em 0.2em 0.2em 35px;
     }
     a {
       display: block;

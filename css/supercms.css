@@ -4591,8 +4591,20 @@ header h1 {
 @media screen and (max-width: 991px) {
   header h1 {
     font-size: 1.5em;
-    margin: 25px 0 0 45px;
+    margin: 18px 0 0 45px;
     height: auto;
+    background: url("../images/favicon.png") no-repeat left center;
+    background-size: 40px auto;
+    padding: 0.5em 0.2em 0.5em 45px;
+  }
+}
+@media screen and (max-width: 767px) {
+  header h1 {
+    font-size: 1.3em;
+    margin: 25px 0 0 45px;
+    background: url("../images/favicon.png") no-repeat left center;
+    background-size: 30px auto;
+    padding: 0.2em 0.2em 0.2em 35px;
   }
 }
 header h1 a {
@@ -5218,7 +5230,7 @@ aside .close_btn:hover, aside .close_btn:focus {
 }
 aside nav {
   overflow: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-overflow-scrolling: touch;
   -webkit-transform: translate3d(0, 0, 0);
@@ -10894,6 +10906,7 @@ h2.title {
   background: rgb(153, 153, 153);
   background: linear-gradient(180deg, rgb(153, 153, 153) 0%, rgb(119, 119, 119) 35%, rgb(102, 102, 102) 100%);
   color: #fff;
+  padding: 0.5em 0.2em;
 }
 .login .btn_grp .btn:hover, .login .btn_grp .btn:focus {
   background: rgb(153, 153, 153);
@@ -10926,6 +10939,9 @@ h2.title {
 .login input[type=text],
 .login input[type=password] {
   background: #fff;
+}
+.login .btn-icon {
+  border: none;
 }
 
 @keyframes fadeInOpacity {
