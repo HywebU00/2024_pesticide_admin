@@ -988,3 +988,163 @@ abbr {
     top: 0;
   }
 }
+.labelEffect2 {
+  margin-left: 1%;
+  & + .labelEffect {
+  }
+  @include screen('mobile') {
+    margin-left: 0;
+  }
+  &.password_toggle,
+  &.hasBtn {
+    input[type='text'],
+    input[type='password'] {
+      padding-right: 3em;
+      letter-spacing: 0.1em;
+    }
+  }
+  display: flex;
+  // flex: 1 1 46%;
+  flex: 1 1 auto;
+  position: relative;
+  margin-bottom: 0.2em;
+  // border-bottom: 1px solid #DEDEDE;
+  // padding-bottom: .2em;
+  & > label {
+    // width: 100%;
+    color: #666;
+    align-items: flex-start;
+    font-size: 1em;
+    font-weight: normal;
+    // position: absolute;
+    pointer-events: none;
+    // left: 0px;
+    // bottom: 0;
+    height: 100%;
+    padding: 0.6em 0.5em 0.1em;
+    transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: 0%;
+      left: 50%;
+      position: absolute;
+      bottom: -2px;
+      height: 2px;
+      background: lighten($form-focus, 0);
+      transition: 0.2s ease all;
+    }
+  }
+  input,
+  textarea,
+  select {
+    flex: 1 1 auto;
+    border-radius: 0.2em;
+    width: auto;
+    &:focus,
+    &.used {
+      & ~ label {
+        bottom: 0;
+        font-size: 0.813em;
+        color: darken($primaryColor, 10);
+        padding: 0;
+        pointer-events: none;
+        height: calc(100% + 1.95em);
+        &:before {
+          width: 50%;
+          left: 0%;
+        }
+        &:after {
+          width: 50%;
+          right: 50%;
+        }
+      }
+    }
+    &.used {
+      & ~ label {
+        &:before {
+          width: 0%;
+          left: 50%;
+        }
+        &:after {
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+  }
+  [class^='btn'],
+  .additonal {
+    flex: 0 1 10%;
+    min-width: 0em;
+    margin: 0em 0 0 0.5em;
+    padding: 0.2em 0.25em;
+    font-size: 0.938em;
+  }
+
+  .btn-icon {
+    flex: 0 1 3em;
+    background: none;
+    flex: 0 1 10%;
+    min-width: 0em;
+    margin: 0em 0 0 0.5em;
+    padding: 0.2em 0.25em;
+    font-size: 0.938em;
+    position: absolute;
+    right: 0.5em;
+    top: 0.35em;
+    i {
+      font-size: 1.25em;
+    }
+  }
+  .additional {
+    white-space: nowrap;
+    font-size: 0.875rem;
+    color: #666;
+    padding: 0 0.5em;
+    display: flex;
+    align-items: center;
+    img {
+      max-height: 3em;
+    }
+    label {
+      input {
+        flex: 0 1 1.2em !important;
+        margin-top: 0;
+      }
+    }
+    .btn_circle {
+      padding: 0;
+      width: 2.5em;
+      height: 2.5em;
+      border-radius: 50%;
+      min-width: 2.5em;
+      background: #fff;
+      position: relative;
+      border: 1px solid #ddd;
+
+      &:hover,
+      &:focus {
+        border: 1px solid $form-focus;
+        background: #fff;
+        box-shadow: none;
+        background: $form-focus;
+        &:before {
+          border: 2px solid #fff;
+          border-left: none;
+          border-top: none;
+        }
+        i {
+          filter: invert(100%);
+          span {
+            filter: invert(100%);
+          }
+        }
+        span {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+}

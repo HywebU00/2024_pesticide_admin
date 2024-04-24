@@ -1542,6 +1542,9 @@ table th i:before {
 table.table_hover {
   font-size: 0.938em;
 }
+table.table_hover th {
+  text-align: center;
+}
 table.table_hover tr:hover {
   background: #f3f8eb;
 }
@@ -1769,6 +1772,8 @@ table .count a:hover, table .count a:focus {
   border-radius: 5px;
   line-height: 1em;
   position: relative;
+  display: inline-block;
+  white-space: nowrap;
 }
 .table_wrapper.sticky_th table .toggler:after {
   position: absolute;
@@ -1776,7 +1781,7 @@ table .count a:hover, table .count a:focus {
   height: 1em;
   content: "";
   left: 0.2em;
-  top: 0.45em;
+  top: 0.35em;
   background: url("../images/icon/icon_add.svg") no-repeat center center;
   background-size: 0.8em auto;
   filter: invert(100%);
@@ -3051,6 +3056,161 @@ input:checked + .checkSwitch_switch:after {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.labelEffect2 {
+  margin-left: 1%;
+  display: flex;
+  flex: 1 1 auto;
+  position: relative;
+  margin-bottom: 0.2em;
+}
+@media screen and (max-width: 767px) {
+  .labelEffect2 {
+    margin-left: 0;
+  }
+}
+.labelEffect2.password_toggle input[type=text],
+.labelEffect2.password_toggle input[type=password], .labelEffect2.hasBtn input[type=text],
+.labelEffect2.hasBtn input[type=password] {
+  padding-right: 3em;
+  letter-spacing: 0.1em;
+}
+.labelEffect2 > label {
+  color: #666;
+  align-items: flex-start;
+  font-size: 1em;
+  font-weight: normal;
+  pointer-events: none;
+  height: 100%;
+  padding: 0.6em 0.5em 0.1em;
+  transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.labelEffect2 > label:before, .labelEffect2 > label:after {
+  content: "";
+  display: block;
+  width: 0%;
+  left: 50%;
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  background: #469658;
+  transition: 0.2s ease all;
+}
+.labelEffect2 input,
+.labelEffect2 textarea,
+.labelEffect2 select {
+  flex: 1 1 auto;
+  border-radius: 0.2em;
+  width: auto;
+}
+.labelEffect2 input:focus ~ label, .labelEffect2 input.used ~ label,
+.labelEffect2 textarea:focus ~ label,
+.labelEffect2 textarea.used ~ label,
+.labelEffect2 select:focus ~ label,
+.labelEffect2 select.used ~ label {
+  bottom: 0;
+  font-size: 0.813em;
+  color: #367344;
+  padding: 0;
+  pointer-events: none;
+  height: calc(100% + 1.95em);
+}
+.labelEffect2 input:focus ~ label:before, .labelEffect2 input.used ~ label:before,
+.labelEffect2 textarea:focus ~ label:before,
+.labelEffect2 textarea.used ~ label:before,
+.labelEffect2 select:focus ~ label:before,
+.labelEffect2 select.used ~ label:before {
+  width: 50%;
+  left: 0%;
+}
+.labelEffect2 input:focus ~ label:after, .labelEffect2 input.used ~ label:after,
+.labelEffect2 textarea:focus ~ label:after,
+.labelEffect2 textarea.used ~ label:after,
+.labelEffect2 select:focus ~ label:after,
+.labelEffect2 select.used ~ label:after {
+  width: 50%;
+  right: 50%;
+}
+.labelEffect2 input.used ~ label:before,
+.labelEffect2 textarea.used ~ label:before,
+.labelEffect2 select.used ~ label:before {
+  width: 0%;
+  left: 50%;
+}
+.labelEffect2 input.used ~ label:after,
+.labelEffect2 textarea.used ~ label:after,
+.labelEffect2 select.used ~ label:after {
+  width: 0%;
+  left: 50%;
+}
+.labelEffect2 [class^=btn],
+.labelEffect2 .additonal {
+  flex: 0 1 10%;
+  min-width: 0em;
+  margin: 0em 0 0 0.5em;
+  padding: 0.2em 0.25em;
+  font-size: 0.938em;
+}
+.labelEffect2 .btn-icon {
+  flex: 0 1 3em;
+  background: none;
+  flex: 0 1 10%;
+  min-width: 0em;
+  margin: 0em 0 0 0.5em;
+  padding: 0.2em 0.25em;
+  font-size: 0.938em;
+  position: absolute;
+  right: 0.5em;
+  top: 0.35em;
+}
+.labelEffect2 .btn-icon i {
+  font-size: 1.25em;
+}
+.labelEffect2 .additional {
+  white-space: nowrap;
+  font-size: 0.875rem;
+  color: #666;
+  padding: 0 0.5em;
+  display: flex;
+  align-items: center;
+}
+.labelEffect2 .additional img {
+  max-height: 3em;
+}
+.labelEffect2 .additional label input {
+  flex: 0 1 1.2em !important;
+  margin-top: 0;
+}
+.labelEffect2 .additional .btn_circle {
+  padding: 0;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  min-width: 2.5em;
+  background: #fff;
+  position: relative;
+  border: 1px solid #ddd;
+}
+.labelEffect2 .additional .btn_circle:hover, .labelEffect2 .additional .btn_circle:focus {
+  border: 1px solid #469658;
+  background: #fff;
+  box-shadow: none;
+  background: #469658;
+}
+.labelEffect2 .additional .btn_circle:hover:before, .labelEffect2 .additional .btn_circle:focus:before {
+  border: 2px solid #fff;
+  border-left: none;
+  border-top: none;
+}
+.labelEffect2 .additional .btn_circle:hover i, .labelEffect2 .additional .btn_circle:focus i {
+  filter: invert(100%);
+}
+.labelEffect2 .additional .btn_circle:hover i span, .labelEffect2 .additional .btn_circle:focus i span {
+  filter: invert(100%);
+}
+.labelEffect2 .additional .btn_circle:hover span, .labelEffect2 .additional .btn_circle:focus span {
+  filter: invert(100%);
 }
 
 [class^=i_]:before {
@@ -9467,13 +9627,6 @@ h2.title {
   }
 }
 
-.edit_block {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  align-content: flex-start;
-}
-
 .tabBtn_block {
   flex: 1 1 100%;
   display: flex;
@@ -9487,9 +9640,9 @@ h2.title {
   justify-content: space-between;
 }
 .tabBtn_block .tab_items .btn {
-  flex: 0 1 calc(33.333% - 1em);
+  flex: 1 1 calc(33.333% - 1em);
   padding: 0.75em 1em;
-  margin: 0 0 0.5em;
+  margin: 0 0.1em 0.5em;
   font-weight: bold;
 }
 .tabBtn_block .tab_items .btn.active {
@@ -9532,6 +9685,7 @@ h2.title {
 }
 .tab__content > div .content__wrapper ._head h3 {
   margin-bottom: 0.5em;
+  justify-content: center;
 }
 .tab__content > div .content__wrapper ._head .flex-form {
   max-width: 100%;
@@ -9953,6 +10107,40 @@ h2.title {
 .search_block .user_edit .article_block h3,
 .search_block .block_edit .article_block h3 {
   font-size: 1.25rem !important;
+}
+
+.date_block {
+  padding: 0.5rem !important;
+  margin: 0;
+  background: #f3f8eb;
+  border-radius: 10px;
+}
+.date_block form {
+  flex: 1 1 100%;
+}
+
+.edit_block {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.edit_block .flex-form {
+  width: 100%;
+  max-width: 100%;
+  margin: 0.5rem 0.5rem 1rem !important;
+}
+.edit_block .int {
+  border: solid 1px #ddd;
+  background: #eee;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  flex: 1 1 100%;
+  margin: 1rem;
+}
+.edit_block .int ul {
+  margin: 0.5em 0 0.5em 1.5em;
+  padding: 0;
 }
 
 .dark {

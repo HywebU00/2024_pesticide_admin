@@ -421,12 +421,7 @@ h2.title {
     }
   }
 }
-.edit_block {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  align-content: flex-start;
-}
+
 // tab
 .tabBtn_block {
   flex: 1 1 100%;
@@ -439,9 +434,9 @@ h2.title {
     margin-bottom: 1em;
     justify-content: space-between;
     .btn {
-      flex: 0 1 calc(33.333% - 1em);
+      flex: 1 1 calc(33.333% - 1em);
       padding: 0.75em 1em;
-      margin: 0 0 0.5em;
+      margin: 0 0.1em 0.5em;
       font-weight: bold;
       &.active {
         background: $form-focus;
@@ -482,6 +477,7 @@ h2.title {
         margin-bottom: 1em;
         h3 {
           margin-bottom: 0.5em;
+          justify-content: center;
         }
         .flex-form {
           max-width: 100%;
@@ -833,6 +829,38 @@ h2.title {
       h3 {
         font-size: 1.25rem !important;
       }
+    }
+  }
+}
+.date_block {
+  padding: 0.5rem !important;
+  margin: 0;
+  background: #f3f8eb;
+  border-radius: 10px;
+  form {
+    flex: 1 1 100%;
+  }
+}
+.edit_block {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  .flex-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem 0.5rem 1rem !important;
+  }
+  .int {
+    border: solid 1px #ddd;
+    background: #eee;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    flex: 1 1 100%;
+    margin: 1rem;
+    ul {
+      margin: 0.5em 0 0.5em 1.5em;
+      padding: 0;
     }
   }
 }

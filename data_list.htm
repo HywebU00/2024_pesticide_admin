@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="light.htm">首頁</a></li>
+            <li><a href="#">代碼管理</a></li>
+            <li>代碼列表</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>代碼列表</h2>
+              <div class="quick_btn">
+                <button onclick="history.back()" class="btn btn-gray"><i class="i_arrow_left"></i>返回前頁</button>
+              </div>
+            </div>
+
+            <!-- flex-12 -->
+            <div class="flex-12">
+              <div class="col">
+                <div class="widget_block">
+                  <div class="_head">
+                    <h3>請點選目錄樹節點</h3>
+                  </div>
+                  <div class="widget">
+                    <!-- 目錄樹區塊 -->
+                    <div class="treeview_block">
+                      <ul class="treeview">
+                        <li class="collapsable">
+                          <div class="hitarea collapsable-hitarea"></div>
+                          <span class="folder">&nbsp;</span>
+                          <ul class="treeview">
+                            <li class="collapsable">
+                              <div class="hitarea collapsable-hitarea"></div>
+                              <span class="folder">代碼參照</span>
+                              <ul id="folder21" class="treeview">
+                                <li>
+                                  <a href="#"><span class="file">是否公開</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">會員登入</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">是否訂戶</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">閱讀權限</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">出處</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">do狀態</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">次選單</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">次選單</span></a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="collapsable">
+                              <div class="hitarea collapsable-hitarea"></div>
+                              <span class="folder">契作管理</span>
+                              <ul id="folder21" class="treeview">
+                                <li>
+                                  <a href="#"><span class="file">採購卡狀態</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">sex</span></a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="collapsable">
+                              <div class="hitarea collapsable-hitarea"></div>
+                              <span class="folder">農藥介接</span>
+                              <ul id="folder21" class="treeview">
+                                <li>
+                                  <a href="#"><span class="file">資拓重要更新日期</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">陳報資料WS</span></a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="collapsable lastCollapsable">
+                              <span class="folder">農藥共用代碼</span>
+                              <ul id="folder21" class="treeview">
+                                <li>
+                                  <a href="#"><span class="file">陳報來源</span></a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="collapsable lastCollapsable">
+                              <span class="folder">檢驗管理</span>
+                              <ul id="folder21" class="treeview">
+                                <li>
+                                  <a href="#"><span class="file">檢驗機構-啟用/停用</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">食品衛生法規-條件</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">加工項目清單-cat1</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">加工項目清單-cat2</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">加工項目清單-cat3</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">是否有效</span></a>
+                                </li>
+                                <li>
+                                  <a href="#"><span class="file">檢驗項目樣本</span></a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="content_block">
+                  <div class="_content">
+                    <div class="_head">
+                      <div class="btn_right">
+                        <button class="btn btn-orange"><i class="i_add invert"></i>代碼新增</button>
+                      </div>
+                    </div>
+                    <div class="_head">
+                      <!-- 頁碼 -->
+                      <div class="pagination">
+                        <form action="" class="form_inline">
+                          <div class="total">
+                            共<span>308</span>筆資料，第<span>1/18</span>頁，每頁顯示
+                            <select name="" id="">
+                              <option value="">10</option>
+                              <option value="">30</option>
+                              <option value="" selected>50</option>
+                              <option value="">100</option>
+                            </select>
+                            筆
+                          </div>
+                        </form>
+                        <ul class="page">
+                          <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+                          <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                          <li class="active"><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">6</a></li>
+                          <li><a href="#">7</a></li>
+                          <li><a href="#">8</a></li>
+                          <li><a href="#">9</a></li>
+                          <li><a href="#">10</a></li>
+                          <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+                          <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="_content">
+                      <!-- 表格樣式 -->
+                      <div class="table_wrapper">
+                        <table class="table_hover">
+                          <thead>
+                            <tr>
+                              <th>代碼</th>
+                              <th>代碼值</th>
+                              <th>代碼顯示</th>
+                              <th>排序</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="aCenter"><a href="#">datasource</a></td>
+                              <td class="num">1</td>
+                              <td class="aCenter">Excel</td>
+                              <td class="aCenter">100</td>
+                            </tr>
+                            <tr>
+                              <td class="aCenter"><a href="#">datasource</a></td>
+                              <td class="num">2</td>
+                              <td class="aCenter">WebService</td>
+                              <td class="aCenter">100</td>
+                            </tr>
+                            <tr>
+                              <td class="aCenter"><a href="#">datasource</a></td>
+                              <td class="num">4</td>
+                              <td class="aCenter">單機版POS</td>
+                              <td class="aCenter">100</td>
+                            </tr>
+                            <tr>
+                              <td class="aCenter"><a href="#">datasource</a></td>
+                              <td class="num">5</td>
+                              <td class="aCenter">網站退貨</td>
+                              <td class="aCenter">100</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- 頁碼 -->
+                      <div class="pagination">
+                        <ul class="page">
+                          <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+                          <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                          <li class="active"><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">6</a></li>
+                          <li><a href="#">7</a></li>
+                          <li><a href="#">8</a></li>
+                          <li><a href="#">9</a></li>
+                          <li><a href="#">10</a></li>
+                          <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+                          <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+    <!-- highlight -->
+    <script src="vendor/highlight/highlight.pack.js"></script>
+    <!-- tree view -->
+    <script src="vendor/treeview/jquery.treeview.js"></script>
+    <script>
+      // first example
+      $('.treeview .treeview').treeview();
+    </script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+      // first example
+      $('.treeview .treeview').treeview();
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+    </script>
+  </body>
+</html>
