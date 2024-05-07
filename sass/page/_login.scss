@@ -61,7 +61,7 @@
   margin: 150px auto 3%;
   left: auto;
   min-height: 400px;
-  padding: 2em 2em 5em;
+  padding: 2em 2em 3em;
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
@@ -98,10 +98,17 @@
       justify-content: center;
       text-align: center;
       color: #28594a;
+      font-optical-sizing: auto;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 600;
       @include screen('xs_mobile') {
         font-size: 1.5rem;
       }
     }
+  }
+  h3 {
+    margin: -1em 0 1.3em;
+    text-align: center;
   }
 
   .form_content {

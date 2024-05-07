@@ -252,6 +252,9 @@ body {
       color: darken($headingColor, 20);
       position: relative;
       padding-left: 15px;
+      font-optical-sizing: auto;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 600;
       &:before {
         content: '';
         width: 5px;
@@ -725,6 +728,9 @@ body {
     font-size: 1.25em;
     display: flex;
     width: 100%;
+    font-optical-sizing: auto;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 600;
   }
   a {
     h3 {
@@ -2504,6 +2510,9 @@ table {
     font-size: 1.35em;
     margin: 0.6em 0.4em;
     color: $color-word;
+    font-optical-sizing: auto;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 600;
   }
   .more {
     position: absolute;

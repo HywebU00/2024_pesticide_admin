@@ -144,10 +144,12 @@ header {
     float: left;
     margin: 1.4rem 0 0 2.4rem;
     padding: 0.2em;
-    font-size: 1em;
     // height: 3em;
     color: #28594a;
     font-size: 2em;
+    font-optical-sizing: auto;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 600;
     @include screen('tablet') {
       font-size: 1.5em;
       margin: 18px 0 0 45px;
