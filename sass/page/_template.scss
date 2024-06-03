@@ -167,14 +167,14 @@ body {
   margin-left: 17rem;
   margin-right: 1rem;
   position: relative;
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  // transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   min-height: 100vh;
   // max-width: 90em;
   &.full {
     margin-left: 5em;
   }
   @media screen and (max-width: 1440px) {
-    margin-left: 14em;
+    margin-left: 14rem;
   }
   @include screen('tablet') {
     margin: 6em 1em 1em;

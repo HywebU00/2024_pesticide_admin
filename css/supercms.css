@@ -6769,7 +6769,6 @@ body.dark {
   margin-left: 17rem;
   margin-right: 1rem;
   position: relative;
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   min-height: 100vh;
 }
 .content.full {
@@ -6777,7 +6776,7 @@ body.dark {
 }
 @media screen and (max-width: 1440px) {
   .content {
-    margin-left: 14em;
+    margin-left: 14rem;
   }
 }
 @media screen and (max-width: 991px) {
