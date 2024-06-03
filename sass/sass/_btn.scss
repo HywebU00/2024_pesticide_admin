@@ -16,7 +16,7 @@ $btn-radius: 2em;
   //   border-bottom: 2px solid darken($btn-bg, 15);
   color: $btn-font-color;
   @include border-radius($btn-radius);
-  transition: 0.3s ease-out;
+  // transition: 0.3s ease-out;
   //   text-shadow: 1px 1px 2px RGBA(0, 0, 0, 0.6);
   &:hover,
   &:focus {

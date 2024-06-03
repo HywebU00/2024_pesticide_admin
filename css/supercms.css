@@ -572,7 +572,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
   text-shadow: 0px 0px 0px RGBA(0, 0, 0, 0.3);
 }
 .btn:hover, .btn:focus {
@@ -620,7 +619,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
 }
 .btn-green:hover, .btn-green:focus {
   cursor: pointer;
@@ -643,7 +641,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
 }
 .btn-blue:hover, .btn-blue:focus {
   cursor: pointer;
@@ -666,7 +663,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
 }
 .btn-yellow:hover, .btn-yellow:focus {
   cursor: pointer;
@@ -689,7 +685,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
   background: rgb(242, 127, 69);
   background: linear-gradient(180deg, rgb(242, 127, 69) 0%, rgb(240, 110, 45) 35%, rgb(224, 85, 16) 100%);
   color: #fff;
@@ -720,7 +715,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
 }
 .btn-red:hover, .btn-red:focus {
   cursor: pointer;
@@ -743,7 +737,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
 }
 .btn-purple:hover, .btn-purple:focus {
   cursor: pointer;
@@ -766,7 +759,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
   background: rgb(58, 150, 91);
   background: linear-gradient(180deg, rgb(58, 150, 91) 0%, rgb(53, 136, 83) 35%, rgb(49, 120, 75) 100%);
   color: #fff;
@@ -797,7 +789,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
   background: rgb(153, 153, 153);
   background: linear-gradient(180deg, rgb(153, 153, 153) 0%, rgb(119, 119, 119) 35%, rgb(102, 102, 102) 100%);
   color: #fff;
@@ -828,7 +819,6 @@ input[type=button], .btn-secondary, .btn-gray, .btn-primary, .btn-purple, .btn-r
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
 }
 .btn-secondary:hover, .btn-secondary:focus {
   cursor: pointer;
@@ -2639,7 +2629,6 @@ input[type=button] {
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
   text-shadow: none !important;
 }
 button:hover, button:focus,
@@ -2667,7 +2656,6 @@ input[type=submit] {
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
   background: rgb(58, 150, 91);
   background: linear-gradient(180deg, rgb(58, 150, 91) 0%, rgb(53, 136, 83) 35%, rgb(49, 120, 75) 100%);
 }
@@ -2784,7 +2772,6 @@ input[type=reset] {
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
   text-shadow: none;
   background: rgb(153, 153, 153);
   background: linear-gradient(180deg, rgb(153, 153, 153) 0%, rgb(119, 119, 119) 35%, rgb(102, 102, 102) 100%);
@@ -2888,7 +2875,6 @@ input[disabled]:focus {
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
-  transition: 0.3s ease-out;
   padding: 0.4em 1em !important;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
