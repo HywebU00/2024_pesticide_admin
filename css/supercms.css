@@ -1334,9 +1334,6 @@ table {
     width: 100%;
   }
 }
-table tr {
-  transition: 0.3s ease-out;
-}
 table tr:hover {
   color: #111;
 }
@@ -2563,7 +2560,6 @@ button {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 5px;
-  transition: 0.3s ease-out;
 }
 input:hover,
 textarea:hover,
@@ -2697,7 +2693,6 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 5px;
-  transition: 0.3s ease-out;
   align-self: stretch;
 }
 textarea:hover {
@@ -2767,7 +2762,6 @@ select:-moz-focusring {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 5px;
-  transition: 0.3s ease-out;
   background: url(../images/basic/icon_select_arrow.svg) no-repeat right center;
   background-size: 20px;
   height: 2.4em;

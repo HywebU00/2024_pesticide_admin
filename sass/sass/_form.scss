@@ -7,7 +7,7 @@
   @include box-sizing();
   border-radius: 5px;
   // @include border-radius($f_radius);
-  transition: 0.3s ease-out;
+  // transition: 0.3s ease-out;
   &:hover {
     outline: none;
   }
