@@ -549,6 +549,9 @@ $(function () {
     $('.modal_overlay').click(closeModal);
     $('.modal .close').click(closeModal);
   });
+
+  $('aside nav .active').addClass('open');
+  $('aside nav .active > ul').slideDown('fast');
 });
 
 //資訊表格收合
