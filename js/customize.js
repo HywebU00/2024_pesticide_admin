@@ -550,8 +550,15 @@ $(function () {
     $('.modal .close').click(closeModal);
   });
 
-  $('aside nav .active').addClass('open');
-  $('aside nav .active > ul').slideDown('fast');
+  const navActiveLi = $('aside nav .active').parents('li');
+  const navLvCount = navActiveLi.length;
+  navActiveLi.last().addClass('open active').children('ul').slideDown('fast');
+  navActiveLi.each(function (i) {
+    if (i < navLvCount - 1) {
+      $(this).addClass('active');
+      $(this).children('ul').slideDown('fast');
+    }
+  });
 });
 
 //資訊表格收合
