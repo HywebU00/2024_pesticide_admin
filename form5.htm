@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="/ad2024/app/admin/Home">首頁</a></li>
+            <li><a href="#">系統功能模組</a></li>
+            <li>訊息公告</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>意見回饋處理</h2>
+              <div class="quick_btn">
+                <button onclick="history.back()" class="btn btn-gray"><i class="i_arrow_left"></i>返回前頁</button>
+              </div>
+            </div>
+
+            <div class="content_block search_block">
+              <!-- 標題 -->
+              <div class="_head"><h3></h3></div>
+
+              <div class="_content">
+                <form id="form1" action="feedback_edit.jsp" method="post">
+                  <input type="hidden" name="tid" value="jofeedback" />
+                  <input id="act" type="hidden" name="act" value="edit" />
+                  <input type="hidden" name="x_sid" value="38" />
+
+                  <div class="table_wrapper th_left">
+                    <table class="table_hover">
+                      <tbody>
+                        <tr>
+                          <th>是否需回覆：</th>
+                          <td>
+                            <input type="hidden" id="x_type" name="x_type" value="1" />
+                            <span class="notice">是</span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th>意見主題：</th>
+                          <td>
+                            <input name="Text1" type="text" class="text used" value="意見回饋測試" readonly="readonly" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>意見內容：</th>
+                          <td><textarea name="TextArea1" rows="6" style="width: 95%" cols="20" readonly="readonly" class="used">意見回饋測試意見回饋測試意見回饋測試</textarea></td>
+                        </tr>
+                        <tr>
+                          <th>意見類別：</th>
+                          <td>其它問題</td>
+                        </tr>
+                        <tr>
+                          <th>處理狀態：</th>
+                          <td>
+                            <select id="x_status" name="x_status">
+                              <option value="0">=請選擇=</option>
+                              <option value="1" selected="">待處理</option>
+                              <option value="2">已處理</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>提問日期：</th>
+                          <td>
+                            <input name="Text10" type="text" value="2023/11/17 17:34" size="20" readonly="readonly" class="used" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>提問者姓名：</th>
+                          <td>
+                            <input name="Text11" type="text" value="吳笑容" readonly="readonly" class="used" />
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th>email信箱：</th>
+                          <td><input name="Text1" type="text" class="text used" value="sharon.wu@hyweb.com.tw" readonly="readonly" /></td>
+                        </tr>
+
+                        <tr>
+                          <th>聯繫電話：</th>
+                          <td><input name="Text12" type="text" class="text" value="" "="" readonly="readonly"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="table_wrapper sticky_th">
+                    <!-- table class改成table_htable -->
+                    <table class="table_htable">
+                      <tbody>
+                        <tr>
+                          <th>回覆主題：</th>
+                          <td>
+                            <input id="x_rtitle" name="x_rtitle" type="text" class="text used" value="XXXXX" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>回覆內容：</th>
+                          <td>
+                            <textarea id="x_rcontext" name="x_rcontext" rows="6" style="width: 95%" cols="20"></textarea>
+                            <a href="#"><img src="images/icon_quickAdd.gif" alt="從Faqs常見問答中選擇" onclick="MM_openBrWindow('feedback_selectfaqs.jsp','','location=yes,width=700,height=600')" /></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>回覆紀錄：</th>
+                          <td>
+                            <input type="hidden" id="x_ritem" value="" />
+                            <ol id="x_ritem"></ol>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th>回覆狀態：</th>
+                          <td>
+                            <input name="Text14" type="text" value="尚末回覆" size="20" readonly="readonly" class="used" />
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th>&nbsp;</th>
+                          <td><input id="act_response" name="button3" type="button" value="立即傳送回覆" /></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="btn_grp">
+                    <input id="act_edit" name="button1" type="button" class="btn btn-primary" value="編修存檔" />
+                    <input id="act_append" name="button4" type="button" class="btn btn-orange" value="將本筆資料儲存至常見問答" />
+                    <input id="act_cancel" name="submit2" type="reset" class="btn btn-normal" value="取　　消" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>

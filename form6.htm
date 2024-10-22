@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="#">首頁</a></li>
+            <li><a href="#">系統管理</a></li>
+            <li>介接服務</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>上傳LOG紀錄</h2>
+              <div class="quick_btn">
+                <button onclick="history.back()" class="btn btn-gray"><i class="i_arrow_left"></i>返回前頁</button>
+              </div>
+            </div>
+
+            <div class="content_block search_block">
+              <div class="table_wrapper sticky_th">
+                <!-- table class改為table_vhtable -->
+                <table class="table_vhtable">
+                  <caption></caption>
+                  <thead>
+                    <tr>
+                      <th>類型</th>
+                      <th colspan="2" style="text-align: center">Excel</th>
+                      <th colspan="2" style="text-align: center">簡易POS</th>
+                      <th colspan="2" style="text-align: center">POS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>執行排程</th>
+                      <td>最後一次</td>
+                      <td>下一次</td>
+                      <td>最後一次</td>
+                      <td>下一次</td>
+                      <td>最後一次</td>
+                      <td>下一次</td>
+                    </tr>
+                    <tr>
+                      <th>時間</th>
+                      <td>2024/10/04 14:12</td>
+                      <td>2024/09/19 11:18</td>
+                      <td>2024/05/28 18:08</td>
+                      <td>2024/05/28 17:56</td>
+                      <td>2024/01/09 00:49</td>
+                      <td>2024/01/09 02:49</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="_content">
+                <form id="form1" action="serviceLog.jsp" mothod="post">
+                  <input id="act" name="act" type="hidden" value="query" />
+                  <div class="table_wrapper th_left">
+                    <table class="table_hover">
+                      <tbody>
+                        <tr>
+                          <th>介接主機</th>
+                          <td><input name="ds" type="radio" value="1" checked="" /> 正式機(posadmin) <input name="ds" type="radio" value="2" /> 測試機(crop)</td>
+                        </tr>
+                        <tr>
+                          <th>販賣業執照號碼</th>
+                          <td>
+                            <input type="text" id="license" name="license" value="" style="width: 30%" />
+                            <button id="sel_license" style="cursor: pointer">商業名稱反查</button>
+                          </td>
+                        </tr>
+
+                        <script type="text/javascript">
+                          $(function () {
+                            $.datepicker.setDefaults($.extend({ showMonthAfterYear: false }, $.datepicker.regional['']));
+                            var op = $.datepicker.regional['zh-TW'];
+                            op.showOn = 'button';
+                            //op.buttonImage = '/ad2024/admin/pos/images/calendar.png';
+                            //op.buttonImageOnly = true;
+                            op.changeMonth = true;
+                            op.changeYear = true;
+                            op.showButtonPanel = true;
+                            //op.minDate='';
+                            op.maxDate = '2024/10/21';
+                            $('#dp1').datepicker(op);
+                            $('#dp2').datepicker(op);
+                          });
+                        </script>
+                        <tr>
+                          <th>上傳時間</th>
+                          <td colspan="">
+                            開始：<input name="dp1" type="text" style="width: 113px" id="dp1" value="2024/01/01" placeholder="請輸查詢開始時間" class="hasDatepicker used" /><button type="button" class="ui-datepicker-trigger">...</button> ～ 結束：<input
+                              name="dp2"
+                              type="text"
+                              style="width: 113px"
+                              id="dp2"
+                              value="2024/10/21"
+                              placeholder="請輸查詢結束時間"
+                              class="hasDatepicker used"
+                            /><button type="button" class="ui-datepicker-trigger">...</button>
+                            <br />
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th>類型</th>
+                          <td>
+                            <select id="sysId" name="sysId">
+                              <option value="" selected="">全部</option>
+                              <option value="L5">WebPOS會員(農友)資料上傳</option>
+                              <option value="F1">Web Service 零售上傳</option>
+                              <option value="F2">Web Service 批發上傳</option>
+                              <option value="F3">Web Service 其他上傳</option>
+                              <option value="F4">Web Service 刪除</option>
+                              <option value="G1">Excel-零售上傳</option>
+                              <option value="G2">Excel-批發上傳</option>
+                              <option value="G6">ODS-零售上傳</option>
+                              <option value="G7">ODS-批發上傳</option>
+                              <option value="D1">簡易POS零售上傳</option>
+                              <option value="D5">簡易POS批發上傳</option>
+                              <option value="D6">簡易POS進貨上傳</option>
+                              <option value="D7">簡易POS庫存調整上傳</option>
+                              <option value="D8">會員(農友)資料上傳</option>
+                              <option value="L1">WebPOS零售上傳</option>
+                              <option value="L2">WebPOS批發上傳</option>
+                              <option value="L3">WebPOS進貨上傳</option>
+                              <option value="J1">J1-農藥零售資料下載資料</option>
+                              <option value="K1">K1-農藥零售資料下載資料(JSON)</option>
+                              <option value="L4">WebPOS庫存調整上傳</option>
+                              <option value="E1">E1_簡易／WebPOS他店批發及退貨下載</option>
+                              <option value="E3">E3_下載雲端會員資料</option>
+                              <option value="H1">興農用藥範圍下載</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>收到成功Y/失敗N</th>
+                          <td><input type="radio" name="status" value="" checked="" />全部 <input type="radio" name="status" value="Y" />成功 <input type="radio" name="status" value="N" />失敗</td>
+                        </tr>
+
+                        <tr>
+                          <th>上傳主機IP</th>
+                          <td>
+                            <input name="ip" id="ip" type="text" class="text" value="" placeholder="" />
+                            <span id="ip_msg" style="color: red"></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="btn_grp">
+                    <input id="do_query" name="submit1" type="submit" class="btn btn-primary" value="查詢" />
+                  </div>
+                </form>
+              </div>
+              <hr id="ui_list" />
+              <script type="text/javascript">
+                $(function () {
+                  location.hash = '#ui_list';
+                });
+              </script>
+
+              <!-- 統計截止日期 -->
+              <div class="_head">
+                <ul class="ullist">
+                  <!--<li>統計截止日期：2024/01/15</li>-->
+                  <!--<li>報表產出日期：2024/01/15</li>-->
+                </ul>
+                <div class="btn_right">
+                  <a href="serviceLog_export.jsp?ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"
+                    ><button class="btn btn-primary"><i class="i_order invert"></i>匯出報表</button></a
+                  >
+                </div>
+              </div>
+
+              <div class="_content">
+                <div class="_head">
+                  <!-- 頁碼 -->
+                  <div class="pagination">
+                    <script type="text/javascript">
+                      $(function () {
+                        $('#tb_size').change(function () {
+                          location.href = 'serviceLog.jsp?page=1&numPage=' + $(this).val() + '&ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA';
+                        });
+                      });
+                    </script>
+                    <div class="total">
+                      共<span>260</span>筆資料，第<span>1/6</span>頁，每頁顯示
+                      <select name="tb_size" id="tb_size">
+                        <option value="5">5</option>
+                        <option selected="" value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="300">300</option>
+                      </select>
+                      筆
+                    </div>
+
+                    <!-- 從1開始 -->
+                    <!-- 資料總數 -->
+                    <!-- 每頁顯示幾筆 -->
+                    <!-- 顯示多少頁 -->
+                    <!-- 請求路徑 -->
+                    <!-- 其它請求參數 -->
+
+                    <ul class="page">
+                      <li class="first">
+                        <a href="serviceLog.jsp?page=1&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"><img src="/admin/app/images/space.gif" alt="first" title="First Page" /></a>
+                      </li>
+                      <li class="prev">
+                        <a href="serviceLog.jsp?page=1&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"><img src="/admin/app/images/space.gif" alt="previous" title="Previous" /></a>
+                      </li>
+                      <!--li class="prevten"><a href="#"><img src="images/space.gif" alt="上10頁" title="上10頁" /></a></li-->
+
+                      <li class="active"><a href="#">1</a></li>
+
+                      <li>
+                        <a href="serviceLog.jsp?page=2&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">2</a>
+                      </li>
+
+                      <li>
+                        <a href="serviceLog.jsp?page=3&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">3</a>
+                      </li>
+
+                      <li>
+                        <a href="serviceLog.jsp?page=4&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">4</a>
+                      </li>
+
+                      <li>
+                        <a href="serviceLog.jsp?page=5&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">5</a>
+                      </li>
+
+                      <li>
+                        <a href="serviceLog.jsp?page=6&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">6</a>
+                      </li>
+
+                      <!--li class="nextten"><a href="#"><img src="images/space.gif" alt="下10頁" title="下10頁" /></a></li-->
+                      <li class="next">
+                        <a href="serviceLog.jsp?page=2&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"><img src="/admin/app/images/space.gif" alt="next" title="Next" /></a>
+                      </li>
+                      <li class="last">
+                        <a href="serviceLog.jsp?page=6&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"><img src="/admin/app/images/space.gif" alt="last" title="Last Page" /></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="_content">
+                <!-- 表格樣式 對齊class:置中 aCenter、置左 aLeft、置右 aRight-->
+                <div class="table_wrapper sticky_th">
+                  <table summary="資料表格" class="table_hover">
+                    <thead>
+                      <tr align="center">
+                        <th>序號</th>
+                        <th>上傳類型</th>
+                        <th width="10%">名稱</th>
+                        <th width="10%">上傳時間</th>
+                        <th>販賣業執照號碼</th>
+                        <th>Web Service<br />SID</th>
+                        <th>狀態</th>
+                        <th>農藥筆數</th>
+                        <th>肥料筆數</th>
+                        <th width="15%">錯誤訊息</th>
+                        <th>上傳結果</th>
+                        <th>回覆結果</th>
+                        <th width="10%">上傳主機IP</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr align="center">
+                        <td>1</td>
+                        <td>G2</td>
+                        <td>Excel-批發上傳</td>
+                        <td>2024/10/04<br />13:55:19</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006163&amp;ds=1">檢視</a></td>
+                        <td></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>2</td>
+                        <td>G2</td>
+                        <td>Excel-批發上傳</td>
+                        <td>2024/09/19<br />10:08:36</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006162&amp;ds=1">檢視</a></td>
+                        <td></td>
+                        <td>0:0:0:0:0:0:0:1</td>
+                      </tr>
+                      <tr align="center">
+                        <td>3</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/09/10<br />10:57:14</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006161&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006161&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>4</td>
+                        <td>D5</td>
+                        <td>簡易POS批發上傳</td>
+                        <td>2024/08/21<br />17:02:48</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>15</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006157&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006157&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>5</td>
+                        <td>D5</td>
+                        <td>簡易POS批發上傳</td>
+                        <td>2024/08/21<br />16:11:06</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006156&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006156&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>6</td>
+                        <td>D5</td>
+                        <td>簡易POS批發上傳</td>
+                        <td>2024/08/21<br />15:34:22</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006155&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006155&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>7</td>
+                        <td>D5</td>
+                        <td>簡易POS批發上傳</td>
+                        <td>2024/08/21<br />11:32:35</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006154&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006154&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>8</td>
+                        <td>F2</td>
+                        <td>Web Service 批發上傳</td>
+                        <td>2024/07/05<br />17:05:03</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>112-0705</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>共計9個欄位異常 第1筆, 販賣業執照號碼異常 第1筆, 製造日期異常 第1筆, 銷售日期異常 第2筆, 販賣業執照號碼異常 第2筆, 製造日期異常 第2筆, 銷售日期異常 第3筆, 販賣業執照號碼異常 第3筆, 製造日期異常 第3筆, 銷售日期異常</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006147&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006147&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>9</td>
+                        <td>F2</td>
+                        <td>Web Service 批發上傳</td>
+                        <td>2024/07/05<br />17:04:57</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>113-0705</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>這家廠商的SID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006146&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006146&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>10</td>
+                        <td>F2</td>
+                        <td>Web Service 批發上傳</td>
+                        <td>2024/07/05<br />17:04:54</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>113-0705</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>這家廠商的SID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006145&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006145&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>11</td>
+                        <td>F2</td>
+                        <td>Web Service 批發上傳</td>
+                        <td>2024/07/05<br />17:04:48</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>113-0705</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>共計9個欄位異常 第1筆, 販賣業執照號碼異常 第1筆, 製造日期異常 第1筆, 銷售日期異常 第2筆, 販賣業執照號碼異常 第2筆, 製造日期異常 第2筆, 銷售日期異常 第3筆, 販賣業執照號碼異常 第3筆, 製造日期異常 第3筆, 銷售日期異常</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006143&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006143&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>12</td>
+                        <td>F2</td>
+                        <td>Web Service 批發上傳</td>
+                        <td>2024/07/05<br />17:04:48</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>113-0705</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>共計9個欄位異常 第1筆, 販賣業執照號碼異常 第1筆, 製造日期異常 第1筆, 銷售日期異常 第2筆, 販賣業執照號碼異常 第2筆, 製造日期異常 第2筆, 銷售日期異常 第3筆, 販賣業執照號碼異常 第3筆, 製造日期異常 第3筆, 銷售日期異常</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006144&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006144&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>13</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/06/28<br />13:39:24</td>
+                        <td><a href="javascript:void(0)" newid="V90003" onclick="show_license(this);">V90003</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006141&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006141&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.182</td>
+                      </tr>
+                      <tr align="center">
+                        <td>14</td>
+                        <td>D1</td>
+                        <td>簡易POS零售上傳</td>
+                        <td>2024/06/28<br />13:39:24</td>
+                        <td><a href="javascript:void(0)" newid="V90003" onclick="show_license(this);">V90003</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006140&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006140&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.182</td>
+                      </tr>
+                      <tr align="center">
+                        <td>15</td>
+                        <td>L1</td>
+                        <td>WebPOS零售上傳</td>
+                        <td>2024/06/12<br />16:28:18</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006135&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006135&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.61</td>
+                      </tr>
+                      <tr align="center">
+                        <td>16</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/06/12<br />15:04:23</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006127&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006127&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>17</td>
+                        <td>D1</td>
+                        <td>簡易POS零售上傳</td>
+                        <td>2024/06/12<br />15:04:23</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006126&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006126&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>18</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/06/05<br />10:18:33</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>$timestamp5</td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006125&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006125&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>19</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/06/05<br />10:18:26</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>$timestamp</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>這家廠商的SID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006124&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006124&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>20</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/06/05<br />10:13:48</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>$timestamp3</td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006123&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006123&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>21</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/06/05<br />10:07:54</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>$timestamp2</td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006122&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006122&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>22</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/06/05<br />10:07:46</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>$timestamp0</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>這家廠商的SID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006121&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006121&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>23</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/06/05<br />10:01:57</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>$timestamp0</td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006120&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006120&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>24</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/06/05<br />10:01:48</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>$timestamp</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>這家廠商的SID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006119&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006119&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>25</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/06/05<br />10:01:19</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>$timestamp</td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006118&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006118&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>26</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/05/31<br />12:02:38</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006117&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006117&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>27</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/05/30<br />18:31:17</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006116&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006116&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>28</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />18:19:31</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td>20240528181820</td>
+                        <td>Y</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006115&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006115&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>29</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />18:19:21</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td>20240528181818</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>這家廠商的SID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006114&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006114&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>30</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />18:18:56</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td>20240528181818</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>共計1個欄位異常 第1筆, RecordID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006113&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006113&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>31</td>
+                        <td>L1</td>
+                        <td>WebPOS零售上傳</td>
+                        <td>2024/05/28<br />18:08:35</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006112&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006112&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.61</td>
+                      </tr>
+                      <tr align="center">
+                        <td>32</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/05/28<br />18:06:21</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006111&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006111&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>33</td>
+                        <td>D1</td>
+                        <td>簡易POS零售上傳</td>
+                        <td>2024/05/28<br />18:06:21</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006110&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006110&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.46.71</td>
+                      </tr>
+                      <tr align="center">
+                        <td>34</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />17:22:23</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>willsp-20240528-006</td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006109&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006109&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>35</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />17:22:16</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>willsp-20240528-005</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>這家廠商的SID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006108&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006108&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>36</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />17:20:42</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>willsp-20240528-005</td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006107&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006107&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>37</td>
+                        <td>L1</td>
+                        <td>WebPOS零售上傳</td>
+                        <td>2024/05/28<br />16:06:14</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006106&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006106&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.61</td>
+                      </tr>
+                      <tr align="center">
+                        <td>38</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />15:35:03</td>
+                        <td><a href="javascript:void(0)" newid="V90019" onclick="show_license(this);">V90019</a></td>
+                        <td>willsp-20240528-001</td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006105&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006105&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>39</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/05/28<br />15:21:06</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006104&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006104&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>40</td>
+                        <td>D1</td>
+                        <td>簡易POS零售上傳</td>
+                        <td>2024/05/28<br />15:21:06</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006103&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006103&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>41</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/05/28<br />14:42:37</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006102&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006102&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>42</td>
+                        <td>D1</td>
+                        <td>簡易POS零售上傳</td>
+                        <td>2024/05/28<br />14:42:36</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006101&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006101&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>43</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/05/28<br />13:59:31</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006100&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006100&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>44</td>
+                        <td>D1</td>
+                        <td>簡易POS零售上傳</td>
+                        <td>2024/05/28<br />13:59:30</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006099&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006099&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>45</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/05/28<br />13:52:50</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006098&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006098&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>46</td>
+                        <td>D1</td>
+                        <td>簡易POS零售上傳</td>
+                        <td>2024/05/28<br />13:52:50</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006097&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006097&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>47</td>
+                        <td>D8</td>
+                        <td>會員(農友)資料上傳</td>
+                        <td>2024/05/28<br />13:45:06</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006096&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006096&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>48</td>
+                        <td>D1</td>
+                        <td>簡易POS零售上傳</td>
+                        <td>2024/05/28<br />13:45:05</td>
+                        <td><a href="javascript:void(0)" newid="V90026" onclick="show_license(this);">V90026</a></td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006095&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006095&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.9.190</td>
+                      </tr>
+                      <tr align="center">
+                        <td>49</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />12:47:14</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td>SP-20240526-will-005</td>
+                        <td>Y</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="serviceLog_source.jsp?rid=1006094&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006094&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                      <tr align="center">
+                        <td>50</td>
+                        <td>F1</td>
+                        <td>Web Service 零售上傳</td>
+                        <td>2024/05/28<br />12:47:06</td>
+                        <td><a href="javascript:void(0)" newid="V90033" onclick="show_license(this);">V90033</a></td>
+                        <td>SP-20240526-will-004</td>
+                        <td>N</td>
+                        <td></td>
+                        <td></td>
+                        <td>這家廠商的SID重複</td>
+                        <td><a href="serviceLog_source.jsp?rid=1006093&amp;ds=1">檢視</a></td>
+                        <td><a href="serviceLog_message.jsp?rid=1006093&amp;ds=1" target="blank">檢視</a></td>
+                        <td>10.10.4.161</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="pagination">
+                  <!-- 從1開始 -->
+                  <!-- 資料總數 -->
+                  <!-- 每頁顯示幾筆 -->
+                  <!-- 顯示多少頁 -->
+                  <!-- 請求路徑 -->
+                  <!-- 其它請求參數 -->
+
+                  <ul class="page">
+                    <li class="first">
+                      <a href="serviceLog.jsp?page=1&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"><img src="/admin/app/images/space.gif" alt="first" title="First Page" /></a>
+                    </li>
+                    <li class="prev">
+                      <a href="serviceLog.jsp?page=1&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"><img src="/admin/app/images/space.gif" alt="previous" title="Previous" /></a>
+                    </li>
+                    <!--li class="prevten"><a href="#"><img src="images/space.gif" alt="上10頁" title="上10頁" /></a></li-->
+
+                    <li class="active"><a href="#">1</a></li>
+
+                    <li>
+                      <a href="serviceLog.jsp?page=2&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">2</a>
+                    </li>
+
+                    <li>
+                      <a href="serviceLog.jsp?page=3&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">3</a>
+                    </li>
+
+                    <li>
+                      <a href="serviceLog.jsp?page=4&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">4</a>
+                    </li>
+
+                    <li>
+                      <a href="serviceLog.jsp?page=5&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">5</a>
+                    </li>
+
+                    <li>
+                      <a href="serviceLog.jsp?page=6&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA">6</a>
+                    </li>
+
+                    <!--li class="nextten"><a href="#"><img src="images/space.gif" alt="下10頁" title="下10頁" /></a></li-->
+                    <li class="next">
+                      <a href="serviceLog.jsp?page=2&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"><img src="/admin/app/images/space.gif" alt="next" title="Next" /></a>
+                    </li>
+                    <li class="last">
+                      <a href="serviceLog.jsp?page=6&amp;numPage=50&amp;ejo=H4sIAAAAAAAAAKtWSkwuUbJSKixNLapU0lFKKTAE8owMjEz0DQyBCCxkBBMyNNA3MlQwMrYytQQikFwxUAqkqLg0KTezBKT32fylL1YuUqoFAPmazbZaAAAA"><img src="/admin/app/images/space.gif" alt="last" title="Last Page" /></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>

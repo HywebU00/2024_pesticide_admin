@@ -1,6 +1,6 @@
 @mixin formStyle($f_color: $color-word, $f_border: $color-gray, $f_radius: 5px) {
   color: $f_color;
-  font-size: 0.938em;
+  font-size: 1em;
   // border: 1px solid transparent;
   border: 1px solid #ddd;
   padding: 0.75em;
@@ -688,10 +688,10 @@ input {
   &[type='email'],
   &[type='tel'],
   &[type='time'],
-  ,
   &[type='url'] {
     border-radius: 0.2em;
     background: #fff;
+    margin: 2px;
     &:hover,
     &:focus {
       // background: #f5f5f5;
@@ -717,9 +717,9 @@ input[type='file'] {
 }
 //---------------------------------------------下拉選單--------//
 select {
-  line-height: 3em;
+  line-height: 2.8em;
   // font-weight: bold;
-  height: 3em;
+  height: 2.8em;
   padding: 0 24px 0 0.5em;
   border-radius: 3px;
   background: url(../images/basic/icon_select_arrow.svg) no-repeat right center #fff;
@@ -1146,5 +1146,23 @@ abbr {
         }
       }
     }
+  }
+}
+.div_inline {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25em;
+  #licenseid_msg {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 1.125em;
+  }
+  label {
+    white-space: nowrap;
+    margin-left: 1em;
+  }
+  input[type='checkbox'] {
+    margin: 0.2em !important;
+    vertical-align: top;
   }
 }

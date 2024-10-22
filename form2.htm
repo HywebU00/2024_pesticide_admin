@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="mp.htm">首頁</a></li>
+            <li><a href="#">代噴作業</a></li>
+            <li>代噴業者管理</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>代噴業者管理-編修</h2>
+              <div class="quick_btn">
+                <button onclick="history.back()" class="btn btn-gray"><i class="i_arrow_left"></i>返回前頁</button>
+              </div>
+            </div>
+
+            <!-- 主要內容區  -->
+            <div class="content_block search_block">
+              <div class="_content">
+                <div class="table_wrapper th_left">
+                  <table class="table_hover">
+                    <tbody>
+                      <tr>
+                        <th><abbr>*</abbr>證書號碼<br />(證書號+技術類別)</th>
+                        <td>
+                          <!-- 增加div_inline div -->
+                          <div class="div_inline">
+                            <span id="licenseid_msg">00001G</span>
+                            <label for="licenseno">證書號：</label>
+                            <input type="text" name="licenseno" id="licenseno" value="00001" placeholder="請輸入數字部份" class="used" />
+                          </div>
+                          <!-- 增加div_inline div end-->
+                          <!-- 增加div_inline div -->
+                          <div class="div_inline">
+                            <span id="level_msg" style="color: red"></span> + 技術類別:<input type="checkbox" name="level" value="1" checked="" />地面施作G<input type="checkbox" name="level" value="2" />室內設施燻蒸P<input type="checkbox" name="level" value="3" />室外土壤燻蒸O<input
+                              type="checkbox"
+                              name="level"
+                              value="4"
+                            />種子消毒S<input type="checkbox" name="level" value="5" />空中施作U <span id="level_msg" style="color: red"></span>
+                          </div>
+                          <!-- 增加div_inline div end-->
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th><abbr>*</abbr>技術人員姓名</th>
+                        <td>
+                          <input name="name" id="name" type="text" class="text used" value="王翔右" placeholder="" />
+                        </td>
+                      </tr>
+                      <tr></tr>
+                      <tr>
+                        <th><abbr>*</abbr>身分證字號</th>
+                        <td>
+                          <input name="id" id="id" type="text" class="text used" value="P122929249" placeholder="" />
+                        </td>
+                      </tr>
+                      <tr></tr>
+                      <tr>
+                        <th>性別</th>
+                        <td><input type="radio" id="sex_M" name="sex" value="M" checked="" />男<input type="radio" id="sex_F" name="sex" value="F" />女<span id="sex_msg" style="color: red"></span></td>
+                      </tr>
+
+                      <script type="text/javascript">
+                        $(function () {
+                          $.datepicker.setDefaults($.extend({ showMonthAfterYear: false }, $.datepicker.regional['']));
+                          var op = $.extend(true, {}, $.datepicker.regional['zh-TW']);
+                          //op.showOn = 'button';
+                          //op.buttonImage = '/ad2024/admin/pos/images/calendar.png';
+                          //op.buttonImageOnly = true;
+                          op.changeMonth = true;
+                          op.changeYear = true;
+                          op.minDate = '';
+                          op.maxDate = '';
+                          (op.yearRange = '1911:c'), $('#birthday').datepicker(op);
+                        });
+                      </script>
+                      <tr>
+                        <th>出生日期</th>
+                        <td>
+                          <input name="birthday" type="text" style="width: 113px" id="birthday" value="1981/10/22" placeholder="" class="hasDatepicker used" />
+                          <span id="birthday_msg" style="color: red"></span>
+                        </td>
+                      </tr>
+
+                      <script type="text/javascript">
+                        $(function () {
+                          $('#cityId').change(function () {
+                            $('#area').load('/ad2024/fun/zipCombobox.jsp', { city: $(this).val() });
+                          });
+
+                          $('#area').change(function () {
+                            $('#zipId').val($(this).val());
+                            $('#zip').val($(this).val());
+                          });
+
+                          $('#area').load('/ad2024/fun/zipCombobox.jsp', { city: '11', area: '432' });
+                        });
+                      </script>
+                      <tr>
+                        <th>聯絡地址</th>
+                        <td>
+                          <select id="cityId" name="cityId">
+                            <option value="01">臺北市</option>
+                            <option value="02">基隆市</option>
+                            <option value="03">新北市</option>
+                            <option value="04">連江縣</option>
+                            <option value="05">宜蘭縣</option>
+                            <option value="07">新竹市</option>
+                            <option value="08">新竹縣</option>
+                            <option value="09">桃園市</option>
+                            <option value="10">苗栗縣</option>
+                            <option value="11" selected="">臺中市</option>
+                            <option value="13">彰化縣</option>
+                            <option value="14">南投縣</option>
+                            <option value="15">嘉義市</option>
+                            <option value="16">嘉義縣</option>
+                            <option value="17">雲林縣</option>
+                            <option value="18">臺南市</option>
+                            <option value="20">高雄市</option>
+                            <option value="23">澎湖縣</option>
+                            <option value="24">金門縣</option>
+                            <option value="25">屏東縣</option>
+                            <option value="26">臺東縣</option>
+                            <option value="27">花蓮縣</option>
+                          </select>
+                          <select name="area" id="area">
+                            <option value="">請選擇地區</option>
+                            <option value="400">中區</option>
+                            <option value="401">東區</option>
+                            <option value="402">南區</option>
+                            <option value="403">西區</option>
+                            <option value="404">北區</option>
+                            <option value="406">北屯區</option>
+                            <option value="407">西屯區</option>
+                            <option value="408">南屯區</option>
+                            <option value="411">太平區</option>
+                            <option value="412">大里區</option>
+                            <option value="413">霧峰區</option>
+                            <option value="414">烏日區</option>
+                            <option value="420">豐原區</option>
+                            <option value="421">后里區</option>
+                            <option value="422">石岡區</option>
+                            <option value="423">東勢區</option>
+                            <option value="424">和平區</option>
+                            <option value="426">新社區</option>
+                            <option value="427">潭子區</option>
+                            <option value="428">大雅區</option>
+                            <option value="429">神岡區</option>
+                            <option value="432" selected="">大肚區</option>
+                            <option value="433">沙鹿區</option>
+                            <option value="434">龍井區</option>
+                            <option value="435">梧棲區</option>
+                            <option value="436">清水區</option>
+                            <option value="437">大甲區</option>
+                            <option value="438">外埔區</option>
+                            <option value="439">大安區</option>
+                          </select>
+                          <input type="hidden" name="zipId" id="zipId" value="432" />
+                          <input name="zip" id="zip" type="text" value="432" size="12" placeholder="郵遞區號" disabled="disabled" style="width: 20%" class="used" /><br />
+                          <input name="address" id="address" type="text" class="text used" placeholder="" value="臺中市大肚區中和村中山路111號" />
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th>聯絡電話</th>
+                        <td>
+                          <input name="telphone" id="telphone" type="text" class="text used" value="04-26933841#1357" placeholder="" />
+                          <div class="notice_warning">格式：02-12345678</div>
+                        </td>
+                      </tr>
+                      <tr></tr>
+                      <tr>
+                        <th>手機</th>
+                        <td>
+                          <input name="cellphone" id="cellphone" type="text" class="text used" value="0911-676003" placeholder="" />
+                          <div class="notice_warning">格式：0912-123456</div>
+                        </td>
+                      </tr>
+                      <tr></tr>
+                      <tr>
+                        <th>電子郵件</th>
+                        <td>
+                          <input name="email" id="email" type="text" class="text" value="" placeholder="" />
+                        </td>
+                      </tr>
+                      <tr></tr>
+                      <tr>
+                        <th>業者名稱(服務機關)</th>
+                        <td>
+                          <input name="cname" id="cname" type="text" class="text" value="" placeholder="" />
+                        </td>
+                      </tr>
+                      <tr></tr>
+                      <tr>
+                        <th>證書狀態</th>
+                        <td><input name="status" type="radio" value="1" checked="" />核准 <input name="status" type="radio" value="0" />停用</td>
+                      </tr>
+
+                      <!--ht:cell fid="city" label="業務執行地區(依登記之縣市)" must="true"/-->
+                      <tr>
+                        <th>備註</th>
+                        <td>
+                          <textarea cols="20" name="note" rows="3"></textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- 按鈕 -->
+                  <div class="btn_grp">
+                    <input type="submit" class="btn btn-primary" value="編修存檔" />
+                    <!--  -->
+                    <input type="reset" class="btn btn-normal" value="取消" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 主要內容區 end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>

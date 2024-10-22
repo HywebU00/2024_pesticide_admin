@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>農藥銷售管理網管理平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/github-gist.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header load header.htm -->
+      <header></header>
+      <!-- aside load aside.htm -->
+      <aside></aside>
+      <!-- 主要內容區 -->
+      <div class="content">
+        <!-- breadcrumb路徑 -->
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="mp.htm">首頁</a></li>
+            <li><a href="#">劣農藥管理</a></li>
+            <li>劣農藥維護</li>
+          </ul>
+        </div>
+        <!-- gird section -->
+        <div class="grid">
+          <div class="container">
+            <div class="title">
+              <h2>劣農藥維護-修改</h2>
+              <div class="quick_btn">
+                <button onclick="history.back()" class="btn btn-gray"><i class="i_arrow_left"></i>返回前頁</button>
+              </div>
+            </div>
+
+            <!-- 主要內容區  -->
+            <div class="content_block search_block">
+              <!-- 標題 -->
+              <div class="_head">
+                <h3>
+                  <span><span class="must">※除商品名稱，其餘皆為必填</span></span>
+                </h3>
+              </div>
+              <div class="_content">
+                <div class="table_wrapper th_left">
+                  <form id="form1" name="form1" action="unqualified_pesticide.jsp" method="post">
+                    <input id="act" type="hidden" name="act" value="do_edit" />
+                    <input id="sid" type="hidden" name="sid" value="4" />
+
+                    <table class="table_hover">
+                      <tbody>
+                        <tr>
+                          <th>許可證號</th>
+                          <td>
+                            <!-- 增加div_inline div -->
+                            <div class="div_inline">
+                              <input type="text" id="licType" name="licType" maxlength="2" placeholder="請輸入10/20/30/40" value="10" class="used" />
+                              <input type="text" id="licNo" name="licNo" maxlength="5" value="00216" class="used" />
+                            </div>
+                            <!-- 增加div_inline div end-->
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th>廠商名稱</th>
+                          <td>
+                            <input name="domManufName" id="domManufName" type="text" class="text used" value="東和化學企業股份有限公司" placeholder="" disabled="" />
+                          </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                          <th>農藥普通名稱</th>
+                          <td>
+                            <input name="pesticideName" id="pesticideName" type="text" class="text used" value="大滅松" placeholder="" disabled="" />
+                          </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                          <th>劑型</th>
+                          <td>
+                            <input name="formCode" id="formCode" type="text" class="text used" value="EC        " placeholder="" disabled="" />
+                          </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                          <th>含量(%)</th>
+                          <td>
+                            <input name="contents" id="contents" type="text" class="text used" value="44.000 (%)" placeholder="" disabled="" />
+                          </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                          <th>商品名稱</th>
+                          <td>
+                            <input name="brandName" id="brandName" type="text" class="text" value="" placeholder="" disabled="" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <script type="text/javascript">
+                            $(function () {
+                              $.datepicker.setDefaults($.extend({ showMonthAfterYear: false }, $.datepicker.regional['']));
+                              //var op = $.datepicker.regional['zh-TW'];
+                              var op = $.extend(true, {}, $.datepicker.regional['zh-TW']);
+                              //op.showOn = 'button';
+                              //op.buttonImage = '/ad2024/admin/pos/images/calendar.png';
+                              //op.buttonImageOnly = true;
+                              op.isTWYear = true;
+                              op.changeMonth = true;
+                              op.changeYear = true;
+                              op.minDate = '';
+                              op.maxDate = '';
+                              (op.yearRange = '2011:c'), $('#makeDt').datepicker(op);
+
+                              var fpdp = '2017/12/18';
+                              if (fpdp != '') {
+                                var twYY = fpdp.substring(0, 4) - 1911;
+                                var twMMdd = fpdp.substring(5, 11);
+                                $('#makeDt_showTWDatePickerText').val(twYY + '/' + twMMdd);
+                              }
+                            });
+                          </script>
+                        </tr>
+                        <tr>
+                          <th>製造日期</th>
+                          <td>
+                            <input type="text" style="width: 113px" id="makeDt_showTWDatePickerText" onclick="$('#makeDt').datetimepicker('show');" placeholder="" class="used" />
+                            <input name="makeDt" type="hidden" id="makeDt" value="2017/12/18" class="hasDatepicker" />
+                            <span id="makeDt_msg" style="color: red"></span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th>批號</th>
+                          <td>
+                            <input name="makeId" id="makeId" type="text" class="text used" value="02" placeholder="" />
+                          </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                          <th>違法情節</th>
+                          <td>
+                            <textarea cols="20" rows="2" name="note" class="used">屬農藥管理法第8條第1款所稱之劣農藥（有效成分含量不合格）1111</textarea>
+                          </td>
+                        </tr>
+
+                        <script type="text/javascript">
+                          $(function () {
+                            $.datepicker.setDefaults($.extend({ showMonthAfterYear: false }, $.datepicker.regional['']));
+                            //var op = $.datepicker.regional['zh-TW'];
+                            var op = $.extend(true, {}, $.datepicker.regional['zh-TW']);
+                            //op.showOn = 'button';
+                            //op.buttonImage = '/ad2024/admin/pos/images/calendar.png';
+                            //op.buttonImageOnly = true;
+                            op.isTWYear = true;
+                            op.changeMonth = true;
+                            op.changeYear = true;
+                            op.minDate = '';
+                            op.maxDate = '';
+                            (op.yearRange = '2011:c'), $('#pubDate').datepicker(op);
+
+                            var fpdp = '2019/04/11';
+                            if (fpdp != '') {
+                              var twYY = fpdp.substring(0, 4) - 1911;
+                              var twMMdd = fpdp.substring(5, 11);
+                              $('#pubDate_showTWDatePickerText').val(twYY + '/' + twMMdd);
+                            }
+                          });
+                        </script>
+                        <tr>
+                          <th>公布日期</th>
+                          <td>
+                            <input type="text" style="width: 113px" id="pubDate_showTWDatePickerText" onclick="$('#pubDate').datetimepicker('show');" placeholder="" class="used" />
+                            <input name="pubDate" type="hidden" id="pubDate" value="2019/04/11" class="hasDatepicker" />
+                            <span id="pubDate_msg" style="color: red"></span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th>裁罰單位</th>
+                          <td>
+                            <select id="cityId" name="cityId">
+                              <option value="">==請選擇==</option>
+                              <option value="01">臺北市政府</option>
+                              <option value="02">基隆市政府</option>
+                              <option value="03">新北市政府</option>
+                              <option value="04">連江縣政府</option>
+                              <option value="05">宜蘭縣政府</option>
+                              <option value="07">新竹市政府</option>
+                              <option value="08">新竹縣政府</option>
+                              <option value="09">桃園市政府</option>
+                              <option value="10">苗栗縣政府</option>
+                              <option value="11">臺中市政府</option>
+                              <option value="13">彰化縣政府</option>
+                              <option value="14">南投縣政府</option>
+                              <option value="15">嘉義市政府</option>
+                              <option value="16">嘉義縣政府</option>
+                              <option value="17">雲林縣政府</option>
+                              <option value="18">臺南市政府</option>
+                              <option value="20">高雄市政府</option>
+                              <option value="23">澎湖縣政府</option>
+                              <option value="24">金門縣政府</option>
+                              <option value="25">屏東縣政府</option>
+                              <option value="26" selected="">臺東縣政府</option>
+                              <option value="27">花蓮縣政府</option>
+                            </select>
+                            <span id="cityId_msg" style="color: red"></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                  <!-- 按鈕 -->
+                  <div class="btn_grp">
+                    <input id="do_edit" class="btn btn-primary" name="submit" type="submit" value="編修存檔" />
+                    <input id="do_delete" class="btn btn-normal" name="delete" type="button" value="刪　除" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 主要內容區 end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+
+    <script>
+      $('header').load('header.htm');
+      $('aside').load('aside.htm');
+      var _Color = ['#20A4F3', '#54CEC3', '#ffbc08', '#fe7b62', '#00b44b', '#2869b9', '#d84400', '#009e7a', '#2e3c56', '#754a28'];
+    </script>
+  </body>
+</html>
