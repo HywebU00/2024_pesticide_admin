@@ -11217,6 +11217,10 @@ h2.title {
   border: none;
 }
 
+#ui-datepicker-div {
+  z-index: 9999 !important;
+}
+
 @keyframes fadeInOpacity {
   0% {
     opacity: 0;
